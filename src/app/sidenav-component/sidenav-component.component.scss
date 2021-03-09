@@ -1,0 +1,116 @@
+.navigation {
+    position: fixed;
+    width: 77px;
+    height: 100%;
+    background: #ffd801;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+//this class is used when the mouse is over sidenav
+// .navigation:hover {
+//     width: 300px;
+// }
+
+.navigation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.navigation ul li {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    margin-left: -19px;
+    margin-top: 10px;
+}
+
+.navigation ul li:hover {
+    background-color: #e6b300;
+}
+
+.navigation ul li a {
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+}
+
+.navigation ul li a .icon {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    color: black;
+}
+
+.navigation ul li a .icon .fas {
+    font-size: 30px;
+}
+
+.navigation ul li a .title {
+    position: absolute;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    text-align: start;
+    white-space: nowrap;
+    color: black;
+    margin-left: 45px;
+}
+.header-dimensions {
+    height: 65px;
+    margin-left:77px;
+  
+    .credentials {
+      position: relative;
+      float: right;
+      margin-right: 20px;
+      margin-top: 17px;
+    }
+  
+    .nav-trigger-button {
+      position: relative;
+      float: left;
+      width: 60px;
+      background-color: #e6b300;
+      cursor: pointer;
+      transition: margin-left 0.5s
+    }
+  
+    .nav-trigger-button::before {
+      content: '\f0c9';
+      font-family: 'fontAwesome';
+      width: 100%;
+      height: 100%;
+      line-height: 55px;
+      text-align: center;
+      font-size: 26px;
+      margin-left: 17px;
+    }
+  
+    .nav-trigger-button:hover {
+      background-color: #ffd801;
+    }
+  
+    .fa-bell {
+      margin-right: 15px;
+      margin-left: 10px;
+    }
+  
+    .fa-power-off {
+      margin-right: 10px;
+    }
+  }
+  
+  #horizontal-line {
+    width: 1843px;
+    margin-left: 77px;
+    margin-top: -10px;
+  }
