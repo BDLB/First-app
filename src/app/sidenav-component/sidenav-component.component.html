@@ -1,37 +1,37 @@
 <div class="navigation" id="sidenav-navigation" >
     <ul>
-        <li>
+        <li (click)="onSelect('queue')">
             <a href="#">
             <span class="icon"><i class="fas fa-route"></i></span>
             <span class="title">Queue</span>
             </a>
         </li>
-        <li>
+        <li (click)="onSelect('progress')">
             <a href="#">
             <span class="icon"><i class="fas fa-map-marked-alt"></i></span>
             <span class="title">In progress</span>
             </a>
         </li>
-        <li>
+        <li (click)="onSelect('cars')">
             <a href="#">
             <span class="icon"><i class="fas fa-car"></i></span>
             <span class="title">Cars</span>
             </a>
         </li>
-        <li>
-            <a href="#">
+        <li (click)="onSelect('trucks')">
+            <a href="#" >
             <span class="icon"><i class="fas fa-truck"></i></span>
-            <span class="title">Truck</span>
+            <span class="title">Trucks</span>
             </a>
         </li>
-        <li>
-            <a href="#">
+        <li (click)="onSelect('drivers')">
+            <a href="#" >
             <span class="icon"><i class="fas fa-user"></i></span>
             <span class="title">Drivers</span>
             </a>
         </li>
-        <li>
-            <a href="#">
+        <li (click)="onSelect('personnel')">
+            <a href="#" >
             <span class="icon"><i class="fas fa-user-friends"></i></span>
             <span class="title">Personnel</span>
             </a>

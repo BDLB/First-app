@@ -1,16 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-sidenav-component',
   templateUrl: './sidenav-component.component.html',
   styleUrls: ['./sidenav-component.component.scss']
 })
-export class SidenavComponent implements OnInit {
+export class SidenavComponent {
   login_name: string = "Bodi"
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  @Output() onSelected = new EventEmitter <string> ();
 
   navOpen(){
     let navigation = document.getElementById('sidenav-navigation').clientWidth;
@@ -21,6 +18,10 @@ export class SidenavComponent implements OnInit {
       document.getElementById("sidenav-navigation").style.width = "77px";
       document.getElementById("content-main-pages").style.marginLeft = "0px";
     }
+  }
+
+  onSelect(feature: string) {
+    this.onSelected.emit(feature);
   }
 
 }

@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'trans';
+  way: string ="queue";
+
+  Navigation(decision:string) {
+    this.way = decision;
+  }
 }
