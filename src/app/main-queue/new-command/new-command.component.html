@@ -1,6 +1,17 @@
-<div class="new-command">
+<div class="new-command flex grid grid-cols-4">
     <mat-form-field floatLabel='never' class="customername-form-field">
-        <mat-label class="label-color">Customer name*</mat-label>
+        <mat-label class="label-color">Client name*</mat-label>
         <input matInput type="text">
     </mat-form-field>
+    <span class="order-form-field col-start-2">
+        <mat-form-field floatLabel='never' class="driver-form-field">
+            <mat-label class="label-color">Starting point</mat-label>
+            <input matInput type="text">
+        </mat-form-field>
+        <mat-form-field floatLabel='never' class="driver-form-field">
+            <mat-label class="label-color">Destination</mat-label>
+            <input matInput type="text">
+        </mat-form-field>
+        
+    </span>
 </div>
