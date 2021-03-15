@@ -40,7 +40,8 @@
 }
 
 .navigation ul li a .icon {
-    position: relative;
+    margin-left: 40px;
+    position: absolute;
     display: block;
     width: 100%;
     min-width: 60px;
@@ -54,9 +55,9 @@
 }
 
 .navigation ul li a .title {
-    position: absolute;
+    position: relative;
     display: block;
-    padding: 0 10px;
+    padding: 0 70px;
     height: 60px;
     line-height: 60px;
     text-align: start;
