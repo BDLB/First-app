@@ -1,37 +1,37 @@
 <div class="navigation" id="sidenav-navigation" >
     <ul>
-        <li (click)="onSelect('queue')">
-            <a href="#">
+        <li routerLinkActive="active_page-color">
+            <a [routerLink]="['/queue']">
             <span class="icon"><i class="fas fa-route"></i></span>
             <span class="title">Queue</span>
             </a>
         </li>
-        <li (click)="onSelect('progress')">
-            <a href="#">
+        <li routerLinkActive="active_page-color">
+            <a [routerLink]="['/in-progress']">
             <span class="icon"><i class="fas fa-map-marked-alt"></i></span>
             <span class="title">In progress</span>
             </a>
         </li>
-        <li (click)="onSelect('cars')">
-            <a href="#">
+        <li routerLinkActive="active_page-color">
+            <a [routerLink]="['/cars']">
             <span class="icon"><i class="fas fa-car"></i></span>
             <span class="title">Cars</span>
             </a>
         </li>
-        <li (click)="onSelect('trucks')">
-            <a href="#" >
+        <li routerLinkActive="active_page-color">
+            <a [routerLink]="['/trucks']" >
             <span class="icon"><i class="fas fa-truck"></i></span>
             <span class="title">Trucks</span>
             </a>
         </li>
-        <li (click)="onSelect('drivers')">
-            <a href="#" >
+        <li routerLinkActive="active_page-color">
+            <a [routerLink]="['/drivers']" >
             <span class="icon"><i class="fas fa-user"></i></span>
             <span class="title">Drivers</span>
             </a>
         </li>
-        <li (click)="onSelect('personnel')">
-            <a href="#" >
+        <li routerLinkActive="active_page-color">
+            <a [routerLink]="['/personnel']" >
             <span class="icon"><i class="fas fa-user-friends"></i></span>
             <span class="title">Personnel</span>
             </a>

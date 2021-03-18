@@ -7,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class SidenavComponent {
   login_name: string = "Bodi"
-  @Output() onSelected = new EventEmitter <string> ();
+  @Output() onSelected = new EventEmitter<string>();
 
   navOpen(){
     let navigation = document.getElementById('sidenav-navigation').clientWidth;

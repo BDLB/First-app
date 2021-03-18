@@ -1,9 +1,2 @@
-<app-sidenav-component (onSelected)="Navigation($event)"></app-sidenav-component>
-<app-main-content>
-    <app-main-queue *ngIf="way === 'queue'"></app-main-queue>
-    <app-main-in-progress *ngIf="way === 'progress'"></app-main-in-progress>
-    <app-main-cars *ngIf="way === 'cars'"></app-main-cars>
-    <app-main-trucks *ngIf="way === 'trucks'"></app-main-trucks>
-    <app-main-drivers *ngIf="way === 'drivers'"></app-main-drivers>
-    <app-main-personnel *ngIf="way === 'personnel'"></app-main-personnel>
-</app-main-content>
+<app-sidenav-component></app-sidenav-component>
+<router-outlet></router-outlet>
