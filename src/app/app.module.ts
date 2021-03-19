@@ -29,7 +29,7 @@ const appRoutes:Routes = [
   { path: 'in-progress', component: MainInProgressComponent},
   { path: 'personnel', component: MainPersonnelComponent},
   { path: 'trucks', component: MainTrucksComponent},
-
+  { path: '**', component: MainQueueComponent},
 ]
 
 @NgModule({
