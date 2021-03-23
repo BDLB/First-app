@@ -1,10 +1,11 @@
 .navigation {
-    position: fixed;
-    width: 77px;
-    height: 100%;
-    background: #ffd801;
-    transition: 0.5s;
-    overflow: hidden;
+  position: fixed;
+  width: 77px;
+  height: 100%;
+  background: #ffd801;
+  transition: 0.5s;
+  overflow: hidden;
+  z-index: 1000;
 }
 
 //this class is used when the mouse is over sidenav
