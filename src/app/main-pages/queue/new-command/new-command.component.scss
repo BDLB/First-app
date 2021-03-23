@@ -15,8 +15,8 @@
     width: 272px;
 
     .mat-form-field-infix {
-      position: relative;
-      bottom: 10px;
+      position: absolute;
+      bottom: 13px;
     }
 
     .mat-form-field-wrapper {
@@ -61,5 +61,26 @@
     .mat-form-field-flex {
       height: 30px;
     }
+  }
+
+  .textarea-position {
+    .mat-form-field-infix {
+      width: 470px;
+      margin-top: -15px;
+      height: 65px;
+    }
+  }
+
+  .notes {
+    border: outset;
+    border-width: 2px;
+    border-color: #e6b300;
+    margin-top: 10px;
+  }
+
+  .save_button {
+    margin-left: 255px;
+    margin-top: 10px;
+    cursor: pointer;
   }
 }

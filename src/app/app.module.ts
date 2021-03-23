@@ -20,6 +20,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';  
+import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
+import { CommandsComponent } from './main-pages/queue/commands/commands.component';
 
 const appRoutes:Routes = [
   { path: '', component: MainQueueComponent},
@@ -42,10 +44,12 @@ const appRoutes:Routes = [
     MainTrucksComponent,
     MainDriversComponent,
     MainPersonnelComponent,
-    NewCommandComponent
+    NewCommandComponent,
+    CommandsComponent,
 
   ],
   imports: [
+    NgxMaterialTimepickerModule,
     BrowserModule,
     AppRoutingModule,
     NgbModule,
