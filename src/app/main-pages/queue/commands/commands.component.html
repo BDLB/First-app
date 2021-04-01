@@ -1,16 +1,15 @@
 <div class="new-command flex grid grid-cols-6">
     <mat-form-field floatLabel='never' class="customername-form-field">
-        <mat-label class="label-color ml-5px">Client name*</mat-label>
-        <input matInput type="text">
+        <input matInput type="text" [(ngModel)]='customer_name'>
     </mat-form-field>
     <span class="order-form-field col-start-2 w-365px">
         <mat-form-field floatLabel='never' class="driver-form-field mt-0 ">
             <mat-label class="label-color ml-5px">Starting point</mat-label>
-            <input matInput type="text">
+            <input matInput type="text" [(ngModel)]='starting_point'>
         </mat-form-field>
         <mat-form-field floatLabel='never' class="driver-form-field mt-0">
             <mat-label class="label-color ml-5px">Destination</mat-label>
-            <input matInput type="text">
+            <input matInput type="text" [(ngModel)]='destination'>
         </mat-form-field>
     </span>
     <div class="ngx-timepicker-field-example ml-70px w-225px">
@@ -19,15 +18,14 @@
     <span class="order-form-field col-start-4 w-365px">
         <mat-form-field floatLabel='never' class="driver-form-field mt-0 ">
             <mat-label class="label-color ml-5px">Proft</mat-label>
-            <input matInput type="number">
+            <input matInput type="number" [(ngModel)]='amount_profit'>
         </mat-form-field>
         <mat-form-field floatLabel='never' class="driver-form-field mt-0">
             <mat-label class="label-color ml-5px">Driver</mat-label>
-            <input matInput type="text">
+            <input matInput type="text" [(ngModel)]='driver_name'>
         </mat-form-field>
     </span>
     <span class="h-60px w-470px ml-75px">
         <textarea placeholder="Notes" matInput class="h-27px w-470px notes"></textarea>
     </span>
-    <i class="far fa-save save_button"></i>
 </div>

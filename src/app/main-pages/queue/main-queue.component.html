@@ -1,4 +1,4 @@
 <div class="main_page-position">
-    <app-new-command></app-new-command>
-    <app-commands></app-commands>
+    <app-new-command (saveEmittor)='NewOrder($event)'></app-new-command>
+    <div *ngFor="let order of orders; let i = index"><app-commands [index]= "i"></app-commands></div>
 </div>
