@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, EventEmitter, Output } from '@angular/core';
 import { ICommands } from 'src/app/shared/interfaces/.interfaces';
-import { CommandsService } from 'src/app/shared/services/queue-commands.service';
+import { AllOrders } from 'src/app/shared/services/.services';
 
 
 @Component({
@@ -27,7 +27,7 @@ export class NewCommandComponent {
     driver_name: '',
   }
 
-  constructor(private CommandsService: CommandsService){}
+  constructor(private CommandsService: AllOrders){}
 
   CommandSaved(){
     this.newCommand.customer_name = this.customer_name;
@@ -36,15 +36,12 @@ export class NewCommandComponent {
     this.newCommand.amount_profit = this.amount_profit;
     this.newCommand.driver_name = this.driver_name;
     
-    this.CommandsService.SaveNewCommand(this.newCommand)
-
-    this.customer_name = "";
-    this.starting_point = "";
-    this.destination = "";
-    this.amount_profit = null;
-    this.driver_name = "";
+    this.CommandsService.allOrders.unshift(this.newCommand)
 
     this.saveEmittor.emit(this.saveCommand=true)
+
+    var x = document.getElementById("notes");
+    console.log(x)
   }
   
 }

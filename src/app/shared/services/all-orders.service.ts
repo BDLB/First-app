@@ -1,17 +1,12 @@
 import { Injectable } from '@angular/core';
+import { ICommands } from 'src/app/shared/interfaces/.interfaces'
 
 @Injectable({
     providedIn: 'root'
 })
 
 export class AllOrders{
-    allOrders: {
-        customer_name: string,
-        starting_point: string,
-        destination: string,
-        amount_profit: number,
-        driver_name: string
-    }[] = [
+    allOrders: ICommands[] = [
         {customer_name: 'Bogdan' , starting_point: 'Arad', destination: 'Timisoara', amount_profit: 200, driver_name: 'Bogdan'},
         {customer_name: 'David' , starting_point: 'Bucuresti', destination: 'Deva', amount_profit: 850, driver_name: 'Lucian'},
         {customer_name: 'Raul' , starting_point: 'Hateg', destination: 'Vaslui', amount_profit: 1230, driver_name: 'Ovidiu'},
