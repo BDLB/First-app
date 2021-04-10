@@ -4,4 +4,5 @@ export interface ICommands {
     destination:string;
     amount_profit:number;
     driver_name: string;
+    notes: string;
 }

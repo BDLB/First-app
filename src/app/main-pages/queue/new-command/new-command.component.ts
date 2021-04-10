@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation, EventEmitter, Output } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, EventEmitter, Output, ViewChild, ElementRef } from '@angular/core';
 import { ICommands } from 'src/app/shared/interfaces/.interfaces';
 import { AllOrders } from 'src/app/shared/services/.services';
 
@@ -19,29 +19,39 @@ export class NewCommandComponent {
   amount_profit: 0;
   driver_name: '';
 
+  @ViewChild('orderNotes') orderNotes: ElementRef;
+
   newCommand:ICommands = {
     customer_name : '',
     starting_point:'',
     destination:'',
     amount_profit: 0,
     driver_name: '',
+    notes: ''
   }
 
   constructor(private CommandsService: AllOrders){}
 
   CommandSaved(){
-    this.newCommand.customer_name = this.customer_name;
-    this.newCommand.starting_point = this.starting_point;
-    this.newCommand.destination = this.destination;
-    this.newCommand.amount_profit = this.amount_profit;
-    this.newCommand.driver_name = this.driver_name;
-    
-    this.CommandsService.allOrders.unshift(this.newCommand)
+    if(this.customer_name !== undefined)
+    {
+      this.newCommand.customer_name = this.customer_name;
+      this.newCommand.starting_point = this.starting_point;
+      this.newCommand.destination = this.destination;
+      this.newCommand.amount_profit = this.amount_profit;
+      this.newCommand.driver_name = this.driver_name;
+      this.newCommand.notes = this.orderNotes.nativeElement.value;
+      
+      this.CommandsService.allOrders.unshift(this.newCommand);
 
-    this.saveEmittor.emit(this.saveCommand=true)
+      this.saveEmittor.emit(this.saveCommand=true);
 
-    var x = document.getElementById("notes");
-    console.log(x)
+      this.customer_name = undefined;
+      this.starting_point ='';
+      this.destination ='';
+      this.amount_profit = null;
+      this.driver_name ='';
+      this.orderNotes.nativeElement.value = '';
+    }
   }
-  
 }
