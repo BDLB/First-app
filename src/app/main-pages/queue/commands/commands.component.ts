@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { CommandsService } from 'src/app/shared/services/queue-commands.service'
 import { ICommands } from 'src/app/shared/interfaces/.interfaces';
 import { AllOrders } from 'src/app/shared/services/.services';
 
@@ -16,19 +15,11 @@ export class CommandsComponent implements OnInit {
   destination:string ='';
   amount_profit:number ;
   driver_name:string ='';
+  notes: string ='';
 
   constructor(
-    private commandsService: CommandsService,
     private AllOrders: AllOrders
   ) { }
-
-  // newCommand:ICommands = {
-  //   customer_name : '',
-  //   starting_point:'',
-  //   destination:'',
-  //   amount_profit: 0,
-  //   driver_name: '',
-  // }
 
   ngOnInit(): void {    
 
@@ -37,19 +28,11 @@ export class CommandsComponent implements OnInit {
     this.destination = this.AllOrders.allOrders[this.index].destination;
     this.amount_profit = this.AllOrders.allOrders[this.index].amount_profit
     this.driver_name = this.AllOrders.allOrders[this.index].driver_name
+    this.notes = this.AllOrders.allOrders[this.index].notes
+  }
 
-    // console.log(this.starting_point)
-    // this.newCommand.starting_point = this.commandsService.order.starting_point;
-    // this.starting_point = this.newCommand.starting_point;
-
-    // this.newCommand.destination = this.commandsService.order.destination;
-    // this.destination = this.newCommand.destination;
-
-    // this.newCommand.amount_profit = this.commandsService.order.amount_profit;
-    // this.amount_profit = this.newCommand.amount_profit;
-
-    // this.newCommand.driver_name = this.commandsService.order.driver_name;
-    // this.driver_name = this.newCommand.driver_name;
+  CommandDeleted(){
+    this.AllOrders.allOrders.splice(this.index,1);
   }
 
 }

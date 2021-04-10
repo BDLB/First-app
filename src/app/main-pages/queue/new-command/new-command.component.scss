@@ -75,7 +75,8 @@
     border: outset;
     border-width: 2px;
     border-color: #e6b300;
-    margin-top: 10px;
+    margin-top: 12px;
+    height: 31px;
   }
 
   .save_button {
@@ -84,5 +85,10 @@
     margin-left: 255px;
     margin-top: 10px;
     cursor: pointer;
+  }
+
+  .p-0px {
+    padding: 0px;
+    overflow: hidden;
   }
 }
