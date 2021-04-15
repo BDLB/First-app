@@ -26,6 +26,7 @@
   }
 
   .label-color {
+    margin-left: 25px;
     color: #C4C5C6
   }
 
@@ -43,23 +44,34 @@
     width: 180px;
     border: 1px solid black;
     border-radius: 5px;
-    margin-top: 13px;
+    margin-left: 9px;
   }
 
   .order-form-field {
     margin-top: 13px;
-    .mat-form-field-infix {
-      position: relative;
-      bottom: 15px;
+    margin-left: -20px;
+
+    .location_icon {
+      margin-left: 3px;
     }
 
     .mat-form-field-wrapper {
       position: static !important;
       height: 30px !important;
-    }
 
-    .mat-form-field-flex {
-      height: 30px;
+      .mat-form-field-flex {
+        height: 30px;
+
+        .mat-form-field-infix {
+          position: relative;
+          bottom: 15px;
+
+          input.mat-input-element {
+            width: 150px;
+            margin-left: 7px;
+          }
+        }
+      }
     }
   }
 
@@ -90,5 +102,24 @@
   .p-0px {
     padding: 0px;
     overflow: hidden;
+  }
+
+  .ngx-timepicker-field {
+    width: 41%;
+    }
+
+  ngx-timepicker-field {
+    .ngx-timepicker-control__arrows {
+      display: none !important;
+    }
+
+    .ngx-timepicker-control {
+      width: 45px !important;
+      border-bottom: 1px solid black;
+    }
+
+    .ngx-timepicker__time-colon {
+      margin-left: -5px !important;
+    }
   }
 }
