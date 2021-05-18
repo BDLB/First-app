@@ -53,6 +53,7 @@
 
     .location_icon {
       margin-left: 3px;
+      cursor: pointer;
     }
 
     .mat-form-field-wrapper {
@@ -106,7 +107,7 @@
 
   .ngx-timepicker-field {
     width: 41%;
-    }
+  }
 
   ngx-timepicker-field {
     .ngx-timepicker-control__arrows {
@@ -119,7 +120,12 @@
     }
 
     .ngx-timepicker__time-colon {
+      color: black;
       margin-left: -5px !important;
+    }
+
+    .ngx-timepicker-control__input {
+      color: black;
     }
   }
 }

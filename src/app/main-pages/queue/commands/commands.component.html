@@ -24,7 +24,7 @@
             <input matInput type="number" [(ngModel)]='amount_profit'>
         </mat-form-field>
         <mat-form-field floatLabel='never' class="driver-form-field mt-0">
-            <i class="fas fa-user-secret location_icon"></i>
+            <i class="fas fa-user-secret location_icon" (click)="onDriverSidenav()"></i>
             <mat-label class="label-color">Driver</mat-label>
             <input matInput type="text" [(ngModel)]='driver_name'>
         </mat-form-field>
