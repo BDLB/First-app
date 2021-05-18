@@ -26,8 +26,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     width: 225px;
 }
 
-.w-365px {
-    width: 365px;
+.w-400px {
+    width: 400px;
 }
 
 .w-470px {
@@ -37,7 +37,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 // Margin Classes:
     // Margin Left Classes
 .ml-5px {
-    margin-left: 5px;
+    margin-left: 5px !important;
 }
 
 .ml-10px {
@@ -72,4 +72,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .h-60px {
     height: 60px;
+}
+
+.mat-input-element {
+    color: black !important;
+}
+
+textarea, i {
+    color: black !important;
 }

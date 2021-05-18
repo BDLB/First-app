@@ -3,26 +3,31 @@
         <mat-label class="label-color ml-5px">Client name*</mat-label>
         <input matInput type="text" [(ngModel)]='customer_name'>
     </mat-form-field>
-    <span class="order-form-field col-start-2 w-365px">
+    <span class="order-form-field col-start-2 w-400px">
         <mat-form-field floatLabel='never' class="driver-form-field mt-0 ">
-            <mat-label class="label-color ml-5px">Starting point</mat-label>
+            <i class="fas fa-map-marker-alt location_icon"></i>
+            <mat-label class="label-color">Starting point</mat-label>
             <input matInput type="text" [(ngModel)]='starting_point'>
         </mat-form-field>
         <mat-form-field floatLabel='never' class="driver-form-field mt-0">
-            <mat-label class="label-color ml-5px">Destination</mat-label>
+            <i class="fas fa-map-marked-alt location_icon"></i>
+            <mat-label class="label-color">Destination</mat-label>
             <input matInput type="text" [(ngModel)]='destination'>
         </mat-form-field>
     </span>
-    <div class="ngx-timepicker-field-example ml-70px w-225px">
-        <ngx-timepicker-field [buttonAlign]="'left'"></ngx-timepicker-field>
+    <div class="ngx-timepicker-field ml-70px w-225px">
+        <ngx-timepicker-field #timepickerField [buttonAlign]="'left'" [defaultTime]="'11:11'" [format]="24"
+            [(ngModel)]='timepicker'></ngx-timepicker-field>
     </div>
-    <span class="order-form-field col-start-4 w-365px">
+    <span class="order-form-field col-start-4 w-400px">
         <mat-form-field floatLabel='never' class="driver-form-field mt-0 ">
-            <mat-label class="label-color ml-5px">Proft</mat-label>
+            <i class="fas fa-dollar-sign location_icon"></i>
+            <mat-label class="label-color">Proft</mat-label>
             <input matInput type="number" [(ngModel)]='amount_profit'>
         </mat-form-field>
         <mat-form-field floatLabel='never' class="driver-form-field mt-0">
-            <mat-label class="label-color ml-5px">Driver</mat-label>
+            <i class="fas fa-user-secret location_icon"></i>
+            <mat-label class="label-color">Driver</mat-label>
             <input matInput type="text" [(ngModel)]='driver_name'>
         </mat-form-field>
     </span>

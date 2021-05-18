@@ -22,10 +22,15 @@ import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';  
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { CommandsComponent } from './main-pages/queue/commands/commands.component';
+import { SidenavDriverComponent } from './main-pages/queue/sidenavs/sidenav-driver/sidenav-driver.component';
 
 const appRoutes:Routes = [
-  { path: '', component: MainQueueComponent},
-  { path: 'queue', component: MainQueueComponent},
+  { path: '',  redirectTo: '/queue', pathMatch: 'full' },
+  { path: 'queue', component: MainQueueComponent, children: [
+    {path:'sidenav/driver/:driver', component: SidenavDriverComponent},
+    {path:'sidenav/money/:order', component: SidenavDriverComponent},
+    {path:'sidenav/destination/:order', component: SidenavDriverComponent},
+  ]},
   { path: 'cars', component: MainCarsComponent},
   { path: 'drivers', component: MainDriversComponent},
   { path: 'in-progress', component: MainInProgressComponent},
@@ -46,6 +51,7 @@ const appRoutes:Routes = [
     MainPersonnelComponent,
     NewCommandComponent,
     CommandsComponent,
+    SidenavDriverComponent,
 
   ],
   imports: [

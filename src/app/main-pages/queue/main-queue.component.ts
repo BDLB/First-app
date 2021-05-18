@@ -9,21 +9,24 @@ import { ICommands } from 'src/app/shared/interfaces/.interfaces';
   styleUrls: ['./main-queue.component.scss']
 })
 export class MainQueueComponent {
-  orders:any;
+  commands: boolean;
+  openSidenav: boolean = false;
+  orders: any;
 
   constructor(
     private AllOrders: AllOrders
   ) { }
 
-  ngOnInit(){
+  ngOnInit() {
     // this.orders= this.AllOrders.getAllOrders()
-   this.orders= this.AllOrders.allOrders
-   console.log(this.orders)
+    this.orders = this.AllOrders.allOrders
   }
-  // this.orders = AllOrders.allOrders
-  commands:boolean;
 
-  NewOrder(order){
-    this.commands=true;
+  NewOrder(order) {
+    this.commands = true;
+  }
+
+  toggleSidenav() {
+    this.openSidenav = !this.openSidenav;
   }
 }
