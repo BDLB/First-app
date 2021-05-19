@@ -23,6 +23,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { NgxMaterialTimepickerModule } from 'ngx-material-timepicker';
 import { CommandsComponent } from './main-pages/queue/commands/commands.component';
 import { SidenavDriverComponent } from './main-pages/queue/sidenavs/sidenav-driver/sidenav-driver.component';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatSelectModule } from '@angular/material/select';
 
 const appRoutes:Routes = [
   { path: '',  redirectTo: '/queue', pathMatch: 'full' },
@@ -66,6 +68,8 @@ const appRoutes:Routes = [
     MatInputModule,
     FormsModule,
     MatButtonModule,
+    MatButtonToggleModule,
+    MatSelectModule,
     RouterModule.forRoot(appRoutes)
     
   ],

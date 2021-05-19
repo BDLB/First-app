@@ -1,19 +1,146 @@
 <div class="col-span-2 sidenav-driver-content">
-   <div class="left_side">
-       <p>Status</p>
-       <p>Vehicle</p>
-       <p>Driver Name</p>
-       <p>Driver ID</p>
-       <p>Address</p>
-       <p>Birth Date:</p>
-       <p>Citizenship</p>
-       <p>E-mail</p>
-       <p>*Phone number</p>
-       <p>Vehicle</p>
-       <p>Hired</p>
-       <p>Driving Experience</p>
-       <p>Pay Targets:</p>
-       <p>Payment Type:</p>
-   </div> 
-   <div class="right_side"></div>
+    <p>Status:</p>
+    <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
+        <mat-button-toggle value="active">Active</mat-button-toggle>
+        <mat-button-toggle value="retired">Retired</mat-button-toggle>
+    </mat-button-toggle-group>
+    
+    <p>Vehicle:</p>
+    <form class="vehicle-form-field">
+        <mat-form-field floatLabel="never">
+            <input matInput type="text" placeholder="Vehicle">
+        </mat-form-field>
+    </form>
+    <p>Driver Name:</p>
+    <form class="driver_name-form-field">
+        <mat-form-field appearance="fill" floatLabel="never">
+          <mat-select placeholder="Sal.">
+            <mat-option value="mr">Mr.</mat-option>
+            <mat-option value="mrs">Mrs.</mat-option>
+            <mat-option value="ms">Ms.</mat-option>
+            <mat-option value="n/a">N/A</mat-option>
+              <!-- TODO: Options with array iteration -->
+            <!-- <mat-option *ngFor="let salutation of salutations" [value]="salutation.value">
+              {{food.viewValue}}
+            </mat-option> -->
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field floatLabel="never">
+            <input matInput type="text" placeholder="First Name">
+        </mat-form-field>
+        <mat-form-field floatLabel="never">
+            <input matInput type="text" placeholder="Initial">
+        </mat-form-field>
+        <mat-form-field floatLabel="never">
+            <input matInput type="text" placeholder="Last Name">
+        </mat-form-field>
+    </form>
+    <p>Driver ID:</p>
+    <form class="driver_id-form-field">
+        <mat-form-field floatLabel="never">
+            <input matInput type="text" placeholder="Last Name">
+        </mat-form-field>
+        <mat-form-field appearance="fill" floatLabel="never">
+            <mat-select placeholder="Availability">
+                <mat-option value="Available">Available</mat-option>
+                <mat-option value="on_vacantion">On Vacantion</mat-option>
+                <mat-option value="short_break">Short Break</mat-option>
+                <!-- TODO: Options with array iteration -->
+                <!-- <mat-option *ngFor="let salutation of salutations" [value]="salutation.value">
+                    {{food.viewValue}}
+                </mat-option> -->
+            </mat-select>
+        </mat-form-field>
+    </form>
+    <p>Address:</p>
+    <form class="address-form-field">
+        <mat-form-field floatLabel="never">
+            <input matInput type="text" placeholder="Country">
+        </mat-form-field>
+        <mat-form-field floatLabel="never">
+            <input matInput type="text" placeholder="City">
+        </mat-form-field>
+        <mat-form-field floatLabel="never">
+            <input matInput type="text" placeholder="Address">
+        </mat-form-field>
+    </form>
+    <p>Birth Date:</p>
+    <form class="birth_date-form-field">
+        <p>TODO: DATEPICKER</p>
+    </form>
+    <p>Citizenship:</p>
+    <form class="citizenship-form-field">
+        <mat-form-field floatLabel="never">
+            <input matInput type="text" placeholder="#1">
+        </mat-form-field>
+        <mat-form-field floatLabel="never">
+            <input matInput type="text" placeholder="#2">
+        </mat-form-field>
+    </form>
+    <p>E-mail:</p>
+    <form class="email-form-field">
+        <mat-form-field floatLabel="never">
+            <input matInput type="text" placeholder="E-mail address">
+        </mat-form-field>
+    </form>
+    <p>*Phone number:</p>
+    <form class="phone-form-field">
+        <mat-form-field floatLabel="never">
+            <input matInput type="text">
+        </mat-form-field>
+        <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle value="active">CELL</mat-button-toggle>
+            <mat-button-toggle value="retired">HOME</mat-button-toggle>
+        </mat-button-toggle-group>
+        <mat-form-field floatLabel="never">
+            <input matInput type="text">
+        </mat-form-field>
+        <mat-button-toggle-group appearance="legacy" name="fontStyle" aria-label="Font Style">
+            <mat-button-toggle value="active">CELL</mat-button-toggle>
+            <mat-button-toggle value="retired">HOME</mat-button-toggle>
+        </mat-button-toggle-group>
+    </form>
+    <p>Hired:</p>
+    <form class="hired-form-field">
+        <p>TODO: DATEPICKER</p>
+        <mat-form-field floatLabel="never">
+            <input matInput type="text" placeholder="By">
+        </mat-form-field>
+    </form>
+    <p>Driving Experience:</p>
+    <form class="driving_experience-form-field">
+        <p>Since:</p>
+        <p>TODO: DATEPICKER</p>
+        <p>For:</p>
+        <mat-form-field floatLabel="never">
+            <input matInput type="number" placeholder="Years">
+        </mat-form-field>
+    </form>
+    <p>Pay Targets:</p>
+    <form class="pay_targets-form-field">
+        <p>1 Week:</p>
+        <mat-form-field floatLabel="never">
+            <input matInput type="number" placeholder="USD">
+        </mat-form-field>
+        <p>1 Mounth:</p>
+        <mat-form-field floatLabel="never">
+            <input matInput type="number" placeholder="USD">
+        </mat-form-field>
+    </form>
+    <p>Payment Type:</p>
+    <form class="payment_type-form-field">
+        <mat-form-field appearance="fill" floatLabel="never">
+            <mat-select placeholder="Payment Type">
+              <mat-option value="mr">Per Mile</mat-option>
+              <mat-option value="mrs">Per Hour</mat-option>
+                <!-- TODO: Options with array iteration -->
+              <!-- <mat-option *ngFor="let salutation of salutations" [value]="salutation.value">
+                {{food.viewValue}}
+              </mat-option> -->
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field floatLabel="never">
+            <input matInput type="text" placeholder="By">
+        </mat-form-field>
+    </form>
 </div>
