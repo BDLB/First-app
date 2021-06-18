@@ -44,7 +44,7 @@ export class CommandsComponent implements OnInit {
   onDriverSidenav() {
     //   let driver: string =this._route.snapshot.params['driver'];
 
-    this._router.navigate(['queue/sidenav/driver/' + this.driver_name]);
+    this._router.navigate(['queue/sidenav/drivers/' + this.driver_name]);
 
     this.toggleSidenav.emit(null)
   }
