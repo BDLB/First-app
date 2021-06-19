@@ -16,23 +16,20 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgxMaterialTimepickerModule } from "ngx-material-timepicker";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { QueueRoutingModule } from "./queue-routing.module";
-import { PageFrameSidenavComponent } from "src/app/shared/components/page-frame-sidenav/page-frame-sidenav.component";
+import { SharedModule } from "src/app/shared/shared.module";
 
 @NgModule({
     declarations:[
     //     SidenavDriversComponent,
-        PageFrameSidenavComponent,
         MainQueueComponent,
         CommandsComponent,
         NewCommandComponent,
     ],
     imports:[
-        CommonModule ,
-        FormsModule,
-        ReactiveFormsModule,
         NgxMaterialTimepickerModule,
         BrowserAnimationsModule,
         MatButtonToggleModule,
+        ReactiveFormsModule,
         ReactiveFormsModule,
         MatFormFieldModule,
         MatCheckboxModule,
@@ -40,6 +37,8 @@ import { PageFrameSidenavComponent } from "src/app/shared/components/page-frame-
         MatSelectModule,
         MatButtonModule,
         MatInputModule,
+        CommonModule,
+        SharedModule,
         FormsModule,
         NgbModule,
         QueueRoutingModule
