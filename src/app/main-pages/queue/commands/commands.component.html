@@ -1,6 +1,7 @@
 <div class="new-command flex grid grid-cols-6">
     <mat-form-field floatLabel='never' class="customername-form-field">
         <input matInput type="text" [(ngModel)]='customer_name'>
+        <input matInput type="number" [(ngModel)]='id'>
     </mat-form-field>
     <span class="order-form-field col-start-2 w-400px">
         <mat-form-field floatLabel='never' class="driver-form-field mt-0 ">
@@ -19,12 +20,12 @@
     </div>
     <span class="order-form-field col-start-4 w-400px">
         <mat-form-field floatLabel='never' class="driver-form-field mt-0">
-            <i class="fas fa-dollar-sign location_icon"></i>
-            <mat-label class="label-color">Proft</mat-label>
+            <i class="fas fa-dollar-sign location_icon" (click)="openSidenav('rates', id)"></i>
+            <mat-label class="label-color">Profit</mat-label>
             <input matInput type="number" [(ngModel)]='amount_profit'>
         </mat-form-field>
         <mat-form-field floatLabel='never' class="driver-form-field mt-0">
-            <i class="fas fa-user-secret location_icon" (click)="onDriverSidenav()"></i>
+            <i class="fas fa-user-secret location_icon" (click)="openSidenav('drivers', driver_name)"></i>
             <mat-label class="label-color">Driver</mat-label>
             <input matInput type="text" [(ngModel)]='driver_name'>
         </mat-form-field>

@@ -24,15 +24,7 @@ export class NewCommandComponent {
   amount_profit: 0;
   driver_name: '';
 
-  newCommand: ICommands = {
-    customer_name: '',
-    starting_point: '',
-    destination: '',
-    timepicker: '',
-    amount_profit: 0,
-    driver_name: '',
-    notes: ''
-  }
+  newCommand = Object.create({} as ICommands);
 
   constructor(private CommandsService: AllOrders) { }
 

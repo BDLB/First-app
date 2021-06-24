@@ -1,0 +1,12 @@
+<mat-sidenav-container class="example-container">
+    <mat-sidenav mode="over" [(opened)]="openSidenav" (closed)="onSidenavClosed()" position="end" class="sidenav-class">
+        <mat-tab-group animationDuration="0ms">
+            <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
+            </mat-tab>
+        </mat-tab-group>
+        <router-outlet></router-outlet>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <ng-content></ng-content>
+    </mat-sidenav-content>
+</mat-sidenav-container>
