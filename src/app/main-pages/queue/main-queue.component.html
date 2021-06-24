@@ -1,14 +1,8 @@
-<mat-sidenav-container class="example-container">
-    <mat-sidenav mode="over" [(opened)]="openSidenav" position="end" class="sidenav-class">
-        <app-page-frame-sidenav></app-page-frame-sidenav>
-        <router-outlet></router-outlet>
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <div class="main_page-position">
-            <app-new-command (saveEmittor)='NewOrder($event)'></app-new-command>
-            <div *ngFor="let order of orders; let i = index">
-                <app-commands (toggleSidenav)="toggleSidenav()" [index]="i"></app-commands>
-            </div>
+<app-page-frame-sidenav>
+    <div class="main_page-position">
+        <app-new-command (saveEmittor)='NewOrder($event)'></app-new-command>
+        <div *ngFor="let order of orders; let i = index">
+            <app-commands (toggleSidenav)="toggleSidenav()" [index]="i"></app-commands>
         </div>
-    </mat-sidenav-content>
-</mat-sidenav-container>
+    </div>
+</app-page-frame-sidenav>
