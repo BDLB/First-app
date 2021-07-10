@@ -17,6 +17,20 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { QueueRoutingModule } from "./queue-routing.module";
 import { SharedModule } from "src/app/shared/shared.module";
 import { SidenavRatesComponent } from './sidenavs/sidenav-rates/sidenav-rates.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+const configFirebase = {
+    production: false,
+    valueCredentials: {
+        apiKey: "AIzaSyAbSasv7VIVQEV97nqeizb2nuWiXyfvGXA",
+        authDomain: "tutorial-30754.firebaseapp.com",
+        projectId: "tutorial-30754",
+        storageBucket: "tutorial-30754.appspot.com",
+        messagingSenderId: "49230831190",
+        appId: "1:49230831190:web:202193837863a10a02e5f7",
+        measurementId: "G-SCLRLPM4GY"
+    }
+}
 
 @NgModule({
     declarations:[
@@ -26,7 +40,8 @@ import { SidenavRatesComponent } from './sidenavs/sidenav-rates/sidenav-rates.co
         NewCommandComponent,
         SidenavRatesComponent,
     ],
-    imports:[
+    imports:[AngularFireModule.initializeApp(configFirebase.valueCredentials),
+        AngularFireDatabaseModule, // for database,
         NgxMaterialTimepickerModule,
         BrowserAnimationsModule,
         MatButtonToggleModule,

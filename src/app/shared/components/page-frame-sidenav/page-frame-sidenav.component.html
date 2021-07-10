@@ -1,7 +1,10 @@
 <mat-sidenav-container class="example-container">
     <mat-sidenav mode="over" [(opened)]="openSidenav" (closed)="onSidenavClosed()" position="end" class="sidenav-class">
         <mat-tab-group animationDuration="0ms">
-            <mat-tab *ngFor="let tab of tabs; let index = index" [label]="tab">
+            <mat-tab *ngFor="let tab of tabs">
+                <ng-template mat-tab-label>
+                    <span (click)="changeSidenavPage(tab)">{{tab}}</span>
+                </ng-template>
             </mat-tab>
         </mat-tab-group>
         <router-outlet></router-outlet>

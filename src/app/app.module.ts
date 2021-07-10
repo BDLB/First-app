@@ -11,8 +11,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
-import { MaterialSharedTextColumnComponent } from './shared/components/material-shared-text-column/material-shared-text-column.component';
-import { MaterialSharedTableComponent } from './shared/components/material-shared-table/material-shared-table.component';
 import { SidenavComponent } from './shared/components/sidenav-component/sidenav-component.component';
 import { MainInProgressComponent } from './main-pages/in-progress/main-in-progress.component';
 import { MainPersonnelComponent } from './main-pages/personnel/main-personnel.component';
@@ -26,8 +24,6 @@ import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
-    MaterialSharedTextColumnComponent,
-    MaterialSharedTableComponent,
     MainInProgressComponent,
     MainPersonnelComponent,
     MainDriversComponent,

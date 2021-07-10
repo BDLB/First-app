@@ -1,4 +1,6 @@
-<app-page-frame-sidenav>
+<app-page-frame-sidenav
+    [tabs]="tabs"
+>
     <div class="main_page-position">
         <app-new-command (saveEmittor)='NewOrder($event)'></app-new-command>
         <div *ngFor="let order of orders; let i = index">

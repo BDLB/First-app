@@ -12,6 +12,7 @@ export class MainQueueComponent {
   commands: boolean;
   openSidenav: boolean = false;
   orders: any;
+  tabs = ["Rates", "Drivers"]
 
   constructor(
     private AllOrders: AllOrders

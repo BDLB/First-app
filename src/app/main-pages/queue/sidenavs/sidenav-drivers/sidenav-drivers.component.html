@@ -1,1 +1,38 @@
-<p>sidenav-drivers works!</p>
+<!-- TODO: MAKE A REUSABLE COMPONENT NAMED SHARED-TABLE -->
+<table mat-table [dataSource]="dataSource"
+    class="sidenav_drivers-table">
+    <ng-container matColumnDef="driver_code">
+        <th mat-header-cell *matHeaderCellDef>Driver Code</th>
+        <td mat-cell *matCellDef="let element"> {{element.driver_code}} </td>
+    </ng-container>
+    <ng-container matColumnDef="availability">
+        <th mat-header-cell *matHeaderCellDef>Availability</th>
+        <td mat-cell *matCellDef="let element"> {{element.availability}} </td>
+    </ng-container>
+    <ng-container matColumnDef="notes">
+        <th mat-header-cell *matHeaderCellDef>Notes</th>
+        <td mat-cell *matCellDef="let element"> {{element.notes}} </td>
+    </ng-container>
+    <ng-container matColumnDef="last_location">
+        <th mat-header-cell *matHeaderCellDef>Last Location</th>
+        <td mat-cell *matCellDef="let element"> {{element.last_location}} </td>
+    </ng-container>
+    <ng-container matColumnDef="last_delivery">
+        <th mat-header-cell *matHeaderCellDef>Last Delivery</th>
+        <td mat-cell *matCellDef="let element"> {{element.last_delivery}} </td>
+    </ng-container>
+    <ng-container matColumnDef="miles">
+        <th mat-header-cell *matHeaderCellDef>Miles</th>
+        <td mat-cell *matCellDef="let element"> {{element.miles}} </td>
+    </ng-container>
+    <ng-container matColumnDef="earnings">
+        <th mat-header-cell *matHeaderCellDef>Earnings</th>
+        <td mat-cell *matCellDef="let element"> {{element.earnings}} </td>
+    </ng-container>
+    <ng-container matColumnDef="target">
+        <th mat-header-cell *matHeaderCellDef>Targer</th>
+        <td mat-cell *matCellDef="let element"> {{element.target}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
