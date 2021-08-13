@@ -1,8 +1,5 @@
-import { DataSource } from '@angular/cdk/collections';
 import { Component, OnInit } from '@angular/core';
 import { AngularFirestore    } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators'
 
 
 @Component({
@@ -11,28 +8,18 @@ import { map } from 'rxjs/operators'
   styleUrls: ['./sidenav-drivers.component.scss']
 })
 export class SidenavDriversComponent implements OnInit {
-  
-  items: Observable<any[]>;
 
   dataSource = [
-    {driver_code: 10025, availability: "on", notes:"Need to wear mask", last_location:"ads", last_delivery:"",miles: 123, earnings: 123, target:123},
-    {driver_code: 10025, availability: "on", notes:"Need to wear mask", last_location:"ads", last_delivery:"",miles: 123, earnings: 123, target:123},
-    {driver_code: 10025, availability: "on", notes:"Need to wear mask", last_location:"ads", last_delivery:"",miles: 123, earnings: 123, target:123},
-    {driver_code: 10025, availability: "on", notes:"Need to wear mask", last_location:"ads", last_delivery:"",miles: 123, earnings: 123, target:123},
-    {driver_code: 10025, availability: "on", notes:"Need to wear mask", last_location:"ads", last_delivery:"",miles: 123, earnings: 123, target:123},
-    {driver_code: 10025, availability: "on", notes:"Need to wear mask", last_location:"ads", last_delivery:"",miles: 123, earnings: 123, target:123},
-    {driver_code: 10025, availability: "on", notes:"Need to wear mask", last_location:"ads", last_delivery:"",miles: 123, earnings: 123, target:123},
-    {driver_code: 10025, availability: "on", notes:"Need to wear mask", last_location:"ads", last_delivery:"",miles: 123, earnings: 123, target:123},
-    {driver_code: 10025, availability: "on", notes:"Need to wear mask", last_location:"ads", last_delivery:"",miles: 123, earnings: 123, target:123}
+    {driver_code: 10025, secondDriverCode: 20025, thirdDriverCode: 30025},
+    {driver_code: 10026, secondDriverCode: 20026, thirdDriverCode: 30025},
+    {driver_code: 10027, secondDriverCode: 20027, thirdDriverCode: 30025},
+    {driver_code: 10028, secondDriverCode: 20028, thirdDriverCode: 30025},
+    {driver_code: 10029, secondDriverCode: 20029, thirdDriverCode: 30025},
   ];
-  displayedColumns: string[] = Object.keys(this.dataSource[0]);
-  data : any
 
-  constructor(public db: AngularFirestore) {
-   }
+  constructor(public db: AngularFirestore) {}
 
   ngOnInit(): void {
-  //   console.log(this.displayedColumns)
   //   new Promise<any>((resolve, reject) =>{
   //    this.db
   //         .collection("comanda")
@@ -43,5 +30,4 @@ export class SidenavDriversComponent implements OnInit {
   //         )).subscribe(resp => this.data = resp)
   // });
   }
-
 }

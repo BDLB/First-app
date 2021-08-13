@@ -10,6 +10,7 @@ import { MaterialSharedTableComponent } from './components/material-shared-table
 import { SidenavDriversComponent } from '../main-pages/queue/sidenavs/sidenav-drivers/sidenav-drivers.component';
 import { SidenavDriverComponent } from '../main-pages/queue/sidenavs/sidenav-driver/sidenav-driver.component';
 import { PageFrameTabComponent } from './components/page-frame-sidenav/page-frame-tab.component';
+import { BaseColumnComponent } from './components/base-column/base-column.component';
 
 const routes: Routes = [
     { path: 'sidenav/drivers/:driver', component: SidenavDriversComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
         SidenavDriversComponent,
         SidenavDriverComponent,
         PageFrameTabComponent,
+        BaseColumnComponent,
     ],
     imports: [
         RouterModule.forChild(routes),
