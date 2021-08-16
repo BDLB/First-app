@@ -9,8 +9,9 @@ import { BaseColumnComponent } from '../base-column/base-column.component';
     {
       provide: BaseColumnComponent,
       useExisting: MaterialSharedTextColumnComponent
-      // That's about DI. I don't know why i need that ?!
-      // What is the purpose of useExisting ?!
+      // In the code above i need a dependency of a BaseColumn
+      // and replace the curent component with the BaseColumn
+      // !! So, that component is just a developed BaseColumn !!
     }
   ],
   encapsulation: ViewEncapsulation.None 
@@ -22,8 +23,7 @@ export class MaterialSharedTextColumnComponent
   @Input()name: string;
   @Input()columnLabel: string;
   constructor() {
-    super() 
-    // This is called because that class extens anoter class
+    super() // This is called because that class extens anoter class
    }
 
   ngOnInit(): void {
