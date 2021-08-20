@@ -1,0 +1,19 @@
+app-page-frame {
+    .drawer-wrapper {
+        margin-top: -17px;
+    }
+    
+    .mat-toolbar {
+        height: 50px;
+        display: flex;
+        margin-left: 77px;
+        background-color: white;
+        align-items: flex-start !important;
+    }
+    
+    .naviagation_routes {
+        border: 1px solid black;
+        height: 32px;
+        border-radius: 10%;
+    }
+}

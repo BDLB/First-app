@@ -1,7 +1,8 @@
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { RouterModule, Routes } from '@angular/router';
-import {MatTableModule} from '@angular/material/table';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
@@ -11,12 +12,13 @@ import { SidenavDriversComponent } from '../main-pages/queue/sidenavs/sidenav-dr
 import { SidenavDriverComponent } from '../main-pages/queue/sidenavs/sidenav-driver/sidenav-driver.component';
 import { PageFrameTabComponent } from './components/page-frame-sidenav/page-frame-tab.component';
 import { BaseColumnComponent } from './components/base-column/base-column.component';
+import { PageFrameComponent } from './components/page-frame/page-frame.component';
 
 const routes: Routes = [
     { path: 'sidenav/drivers/:driver', component: SidenavDriversComponent },
     { path: 'sidenav/rate/:order', component: SidenavDriverComponent },
 ];
- 
+
 @NgModule({
     declarations: [
         MaterialSharedTextColumnComponent,
@@ -25,10 +27,12 @@ const routes: Routes = [
         SidenavDriverComponent,
         PageFrameTabComponent,
         BaseColumnComponent,
+        PageFrameComponent,
     ],
     imports: [
         RouterModule.forChild(routes),
         MatSidenavModule,
+        MatToolbarModule,
         MatTableModule,
         MatTabsModule,
         CommonModule,
@@ -39,4 +43,4 @@ const routes: Routes = [
         PageFrameTabComponent,
     ]
 })
-export class SharedModule {}
+export class SharedModule { }

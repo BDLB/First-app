@@ -1,7 +1,7 @@
 <div class="navigation" id="sidenav-navigation" >
     <ul>
         <li routerLinkActive="active_page-color">
-            <a [routerLink]="['/queue']">
+            <a [routerLink]="['general',{ outlets: { tab: ['queue']} }]">
             <span class="icon"><i class="fas fa-route"></i></span>
             <span class="title">Queue</span>
             </a>

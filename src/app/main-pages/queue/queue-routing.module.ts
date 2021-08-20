@@ -1,24 +1,19 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+import { Routes } from "@angular/router";
 
-import { MainQueueComponent } from "./main-queue.component";
+import { PageFrameComponent } from "src/app/shared/components/page-frame/page-frame.component";
 import { SidenavDriversComponent } from "./sidenavs/sidenav-drivers/sidenav-drivers.component";
 import { SidenavRatesComponent } from "./sidenavs/sidenav-rates/sidenav-rates.component";
+import { MainQueueComponent } from "./main-queue.component";
 
-const queueRoutes: Routes = [
+export const queueRoutes: Routes = [
     {
-        path: 'queue', component: MainQueueComponent, 
+        path: 'general', component: PageFrameComponent,
         children: [
-            { path: 'sidenav/drivers/:driver', component: SidenavDriversComponent },
-            { path: 'sidenav/rates/:order', component: SidenavRatesComponent },
+            {
+                path: 'queue',
+                outlet: 'tab',
+                component: MainQueueComponent
+            }
         ]
-    },
+    }
 ]
-
-@NgModule({
-    imports: [
-        RouterModule.forChild(queueRoutes),
-        ],
-    exports: [RouterModule]
-})
-export class QueueRoutingModule {}

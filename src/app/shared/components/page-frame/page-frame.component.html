@@ -1,0 +1,35 @@
+<!-- The drawer wrapper -->
+<mat-drawer-container class="drawer-wrapper">
+    <!-- The drawer content -->
+    <mat-drawer 
+        mode="over"
+        opened="false"
+        position="end"
+        #drawer
+    >
+        <router-outlet name="sidenav"></router-outlet>
+    </mat-drawer>
+    <!-- The (Tab) background of the drawer -->
+    <mat-drawer-content>
+        <mat-toolbar class="toolbar">
+            <div class="naviagation_routes">
+                <!-- The class below is applied when routerLink match the value -->
+                <!-- It targets the routerLink in a tag -->
+                <div routerLinkActive="navigation_active" *ngFor="let tab of pageConfiguration.tabs">
+                    <a
+                        routerLinkActive="active_tab"
+                        [routerLink]="[{ outlets: { tab: [tab.path]} }]"
+                    >
+                        <span>
+                            {{ tab.title }}
+                        </span>
+                    </a>
+                </div>
+            </div>
+            <div class="buttons"></div>
+        </mat-toolbar>
+        <div class="tab-wrapper">
+            <router-outlet name="tab"></router-outlet>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

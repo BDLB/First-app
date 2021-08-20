@@ -1,24 +1,26 @@
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { MatButtonToggleModule } from "@angular/material/button-toggle";
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatButtonModule } from "@angular/material/button";
+import { MatSelectModule } from "@angular/material/select";
+import { MatInputModule } from "@angular/material/input";
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { AngularFireModule } from '@angular/fire';
+import { RouterModule } from "@angular/router";
+import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
+import { NgxMaterialTimepickerModule } from "ngx-material-timepicker";
+import { SidenavRatesComponent } from './sidenavs/sidenav-rates/sidenav-rates.component';
 import { NewCommandComponent } from "./new-command/new-command.component";
 import { CommandsComponent } from "./commands/commands.component";
 import { MainQueueComponent } from "./main-queue.component";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { CommonModule } from "@angular/common";
-import { MatButtonModule } from "@angular/material/button";
-import { MatButtonToggleModule } from "@angular/material/button-toggle";
-import { MatCheckboxModule } from "@angular/material/checkbox";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatInputModule } from "@angular/material/input";
-import { MatSelectModule } from "@angular/material/select";
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { NgxMaterialTimepickerModule } from "ngx-material-timepicker";
-import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { QueueRoutingModule } from "./queue-routing.module";
 import { SharedModule } from "src/app/shared/shared.module";
-import { SidenavRatesComponent } from './sidenavs/sidenav-rates/sidenav-rates.component';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { queueRoutes } from "./queue-routing.module"
+
 const configFirebase = {
     production: false,
     valueCredentials: {
@@ -41,6 +43,7 @@ const configFirebase = {
         SidenavRatesComponent,
     ],
     imports:[AngularFireModule.initializeApp(configFirebase.valueCredentials),
+        RouterModule.forChild(queueRoutes),
         AngularFireDatabaseModule, // for database,
         NgxMaterialTimepickerModule,
         BrowserAnimationsModule,
@@ -56,7 +59,6 @@ const configFirebase = {
         SharedModule,
         FormsModule,
         NgbModule,
-        QueueRoutingModule
     ]
 })
 export class QueueModule {}
