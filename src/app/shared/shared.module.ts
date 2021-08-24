@@ -1,32 +1,38 @@
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatTabsModule } from '@angular/material/tabs';
-import { RouterModule, Routes } from '@angular/router';
+
+import { MaterialSharedTextColumnComponent } from './components/material-shared-text-column/material-shared-text-column.component';
+import { MaterialSharedTableComponent } from './components/material-shared-table/material-shared-table.component';
 import { SidenavDriverComponent } from '../main-pages/queue/sidenavs/sidenav-driver/sidenav-driver.component';
-import { SidenavDriversComponent } from '../main-pages/queue/sidenavs/sidenav-drivers/sidenav-drivers.component';
-
 import { PageFrameSidenavComponent } from './components/page-frame-sidenav/page-frame-sidenav.component';
+import { BaseColumnComponent } from './components/base-column/base-column.component';
+import { PageFrameComponent } from './components/page-frame/page-frame.component';
+import { RouterModule } from '@angular/router';
 
-const routes: Routes = [
-    { path: 'sidenav/drivers/:driver', component: SidenavDriversComponent },
-    { path: 'sidenav/rate/:order', component: SidenavDriverComponent },
-];
- 
 @NgModule({
     declarations: [
-        SidenavDriverComponent,
+        MaterialSharedTextColumnComponent,
+        MaterialSharedTableComponent,
         PageFrameSidenavComponent,
-        SidenavDriversComponent
+        SidenavDriverComponent,
+        BaseColumnComponent,
+        PageFrameComponent,
     ],
     imports: [
-        RouterModule.forChild(routes),
-        CommonModule,
-        MatTabsModule,
+        RouterModule,
         MatSidenavModule,
+        MatToolbarModule,
+        MatTableModule,
+        MatTabsModule,
+        CommonModule,
     ],
     exports: [
-        PageFrameSidenavComponent
+        MaterialSharedTextColumnComponent,
+        MaterialSharedTableComponent,
     ]
 })
-export class SharedModule {}
+export class SharedModule { }

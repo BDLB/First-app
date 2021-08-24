@@ -20,12 +20,12 @@
     </div>
     <span class="order-form-field col-start-4 w-400px">
         <mat-form-field floatLabel='never' class="driver-form-field mt-0">
-            <i class="fas fa-dollar-sign location_icon" (click)="openSidenav('rates', id)"></i>
+            <i class="fas fa-dollar-sign location_icon" (click)="openSidenav('bookRate', id)"></i>
             <mat-label class="label-color">Profit</mat-label>
             <input matInput type="number" [(ngModel)]='amount_profit'>
         </mat-form-field>
         <mat-form-field floatLabel='never' class="driver-form-field mt-0">
-            <i class="fas fa-user-secret location_icon" (click)="openSidenav('drivers', driver_name)"></i>
+            <i class="fas fa-user-secret location_icon" (click)="openSidenav('bookDriver', id)"></i>
             <mat-label class="label-color">Driver</mat-label>
             <input matInput type="text" [(ngModel)]='driver_name'>
         </mat-form-field>

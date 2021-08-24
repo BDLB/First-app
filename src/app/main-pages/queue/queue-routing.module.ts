@@ -1,24 +1,37 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+import { Routes } from "@angular/router";
 
+import { PageFrameSidenavComponent } from "src/app/shared/components/page-frame-sidenav/page-frame-sidenav.component";
+import { SidenavDriversRegardComponent } from "./sidenavs/sidenav-drivers-regard/sidenav-drivers-regard.component";
+import { PageFrameComponent } from "src/app/shared/components/page-frame/page-frame.component";
 import { MainQueueComponent } from "./main-queue.component";
-import { SidenavDriversComponent } from "./sidenavs/sidenav-drivers/sidenav-drivers.component";
-import { SidenavRatesComponent } from "./sidenavs/sidenav-rates/sidenav-rates.component";
+import { SidenavRatesRegardComponent } from "./sidenavs/sidenav-rates-regard/sidenav-rates-regard.component";
 
-const queueRoutes: Routes = [
+export const queueRoutes: Routes = [
     {
-        path: 'queue', component: MainQueueComponent, 
+        path: 'general',
+        component: PageFrameComponent,
         children: [
-            { path: 'sidenav/drivers/:driver', component: SidenavDriversComponent },
-            { path: 'sidenav/rates/:order', component: SidenavRatesComponent },
-        ]
-    },
-]
+            {
+                path: 'queue',
+                outlet: 'tab',
+                component: MainQueueComponent
+            },
+            {
+                path: ':tabName/:id',
+                outlet: 'sidenav',
+                component: PageFrameSidenavComponent,
+                children: [
+                    {
+                        path: 'bookDriver',
+                        component: SidenavDriversRegardComponent
+                    },
+                    {
+                        path: 'bookRate',
+                        component: SidenavRatesRegardComponent
+                    }
 
-@NgModule({
-    imports: [
-        RouterModule.forChild(queueRoutes),
-        ],
-    exports: [RouterModule]
-})
-export class QueueRoutingModule {}
+                ]
+            }
+        ]
+    }
+]

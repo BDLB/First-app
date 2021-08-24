@@ -1,8 +1,10 @@
-<!-- <table
+<table
     mat-table 
-    [dataSource]="" 
+    [dataSource]="sharedDataSource" 
     class="mat-elevation-z8"
-> -->
-<!-- Dynamic content -->
-<!-- <ng-content></ng-content>
-</table> -->
+>
+    <ng-content></ng-content>
+
+    <tr mat-header-row *matHeaderRowDef="columns">{{column?.label}}</tr>
+    <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+</table>

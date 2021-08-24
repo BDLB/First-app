@@ -7,7 +7,7 @@ import { MainPersonnelComponent } from './main-pages/personnel/main-personnel.co
 import { MainTrucksComponent } from './main-pages/trucks/main-trucks.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/queue', pathMatch: 'full' },
+  { path: '', redirectTo: '/general/(tab:queue)', pathMatch: 'full' },
   { path: 'cars', component: MainCarsComponent},
   { path: 'drivers', component: MainDriversComponent},
   { path: 'in-progress', component: MainInProgressComponent},

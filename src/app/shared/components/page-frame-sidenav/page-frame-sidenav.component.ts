@@ -1,7 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Location } from '@angular/common';
-
-import { PageFrameSidenavService } from '../../services/page-frame-sidenav.service';
+import { Component, OnInit } from '@angular/core';
+import { PageFrameComponent } from '../page-frame/page-frame.component';
 
 @Component({
   selector: 'app-page-frame-sidenav',
@@ -11,20 +9,11 @@ import { PageFrameSidenavService } from '../../services/page-frame-sidenav.servi
 export class PageFrameSidenavComponent implements OnInit {
 
   constructor(
-    private _location: Location,
-    private _pageFrameSidenav: PageFrameSidenavService
-  ) {}
-  openSidenav: boolean;
-  tabs = []
-  
+    private _pageFrameComponent: PageFrameComponent
+  ) { }
+
   ngOnInit(): void {
-    this._pageFrameSidenav.sidenavSwitch.subscribe(
-      (open) => {
-        this.openSidenav = open;
-    })
+    this._pageFrameComponent.openSidenavDrawer();
   }
 
-  onSidenavClosed() {
-    this._location.back()
-  }
 }

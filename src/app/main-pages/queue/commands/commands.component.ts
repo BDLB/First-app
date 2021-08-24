@@ -1,7 +1,6 @@
 import { Component, Input, OnInit, ViewEncapsulation, Output, EventEmitter } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AllOrders } from 'src/app/shared/services/.services';
-import { PageFrameSidenavService } from 'src/app/shared/services/page-frame-sidenav.service';
 
 @Component({
   selector: 'app-commands',
@@ -23,9 +22,9 @@ export class CommandsComponent implements OnInit {
   id: number;
 
   constructor(
-    private _sidenavService: PageFrameSidenavService,
     private _AllOrders: AllOrders,
-    private _router: Router
+    private _router: Router,
+    private _activateRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -44,7 +43,12 @@ export class CommandsComponent implements OnInit {
   }
 
   openSidenav(content: string, param) {
-    this._router.navigate([`queue/sidenav/${content}/` + param]);
-    this._sidenavService.switchSidenav()
+    this._router.navigate(
+      // Below we navigate on sidenav outlet with that array of
+      // arguments. And we specify to do that relative from 
+      // present active URL
+      [{ outlets: { sidenav: [ 'general', param, content ] }}],
+      { relativeTo: this._activateRoute.parent }
+    )
   }
 }
