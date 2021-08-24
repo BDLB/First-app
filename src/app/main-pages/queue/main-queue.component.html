@@ -1,10 +1,6 @@
-<app-page-frame-tab
-    [tabs]="tabs"
->
-    <div class="main_page-position">
-        <app-new-command (saveEmittor)='NewOrder($event)'></app-new-command>
-        <div *ngFor="let order of orders; let i = index">
-            <app-commands (toggleSidenav)="toggleSidenav()" [index]="i"></app-commands>
-        </div>
-    </div>
-</app-page-frame-tab>
+<div class="main_page-position">
+    <app-new-command (saveEmittor)='NewOrder($event)'></app-new-command>
+    <ng-container *ngFor="let order of orders; let i = index">
+        <app-commands (toggleSidenav)="toggleSidenav()" [index]="i"></app-commands>
+    </ng-container>
+</div>

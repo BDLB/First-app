@@ -1,11 +1,12 @@
 <!-- The drawer wrapper -->
-<mat-drawer-container class="drawer-wrapper">
+<mat-drawer-container class="drawer-wrapper" (backdropClick)="onBackdropClicked()">
     <!-- The drawer content -->
     <mat-drawer 
+        class="sidenav"
         mode="over"
         opened="false"
         position="end"
-        #drawer
+        #matDrawer
     >
         <router-outlet name="sidenav"></router-outlet>
     </mat-drawer>
