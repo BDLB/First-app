@@ -2,15 +2,27 @@
     [sharedDataSource]="dataSource"
 >
     <material-shared-text-column
-        columnLabel="Driver Code"
         [name]="'driver_code'"
+        columnLabel="Driver Code"
     ></material-shared-text-column>
     <material-shared-text-column
-        columnLabel="Second Driver Code"
-        [name]="'secondDriverCode'"
+        [name]="'availability'"
+        columnLabel="Availability"
     ></material-shared-text-column>
     <material-shared-text-column
-        columnLabel="Third Driver Code"
-        [name]="'thirdDriverCode'"
+        [name]="'miles'"
+        columnLabel="Miles"
+    ></material-shared-text-column>
+    <material-shared-text-column
+        [name]="'target'"
+        columnLabel="Target"
+    ></material-shared-text-column>
+    <material-shared-text-column
+        [name]="'notes'"
+        columnLabel="Notes"
+    ></material-shared-text-column>
+    <material-shared-text-column
+        [name]="'earnings'"
+        columnLabel="Earnings"
     ></material-shared-text-column>
 </material-shared-table>

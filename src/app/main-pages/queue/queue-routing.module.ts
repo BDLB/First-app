@@ -5,6 +5,7 @@ import { SidenavDriversRegardComponent } from "./sidenavs/sidenav-drivers-regard
 import { PageFrameComponent } from "src/app/shared/components/page-frame/page-frame.component";
 import { MainQueueComponent } from "./main-queue.component";
 import { SidenavRatesRegardComponent } from "./sidenavs/sidenav-rates-regard/sidenav-rates-regard.component";
+import { QueueSidenavDriversResolver } from "src/app/shared/resolvers/.resolvers";
 
 export const queueRoutes: Routes = [
     {
@@ -23,13 +24,15 @@ export const queueRoutes: Routes = [
                 children: [
                     {
                         path: 'bookDriver',
-                        component: SidenavDriversRegardComponent
+                        component: SidenavDriversRegardComponent,
+                        resolve: {
+                            sidenavDriver: QueueSidenavDriversResolver
+                        }
                     },
                     {
                         path: 'bookRate',
                         component: SidenavRatesRegardComponent
                     }
-
                 ]
             }
         ]

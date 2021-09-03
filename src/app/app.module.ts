@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatInputModule } from '@angular/material/input';
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
@@ -40,6 +41,7 @@ import { AppComponent } from './app.component';
     MatCheckboxModule,
     MatSidenavModule,
     AppRoutingModule,
+    HttpClientModule,
     MatButtonModule,
     MatSelectModule,
     MatInputModule,
