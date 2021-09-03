@@ -1,6 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { combineLatest, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
 import { PageFrameComponent } from 'src/app/shared/components/page-frame/page-frame.component';
-import { AngularFirestore    } from '@angular/fire/firestore';
+import { QueueSidenavDriversService } from 'src/app/shared/services/.services';
 
 @Component({
   selector: 'app-sidenav-drivers-regard',
@@ -8,24 +10,42 @@ import { AngularFirestore    } from '@angular/fire/firestore';
   styleUrls: ['./sidenav-drivers-regard.component.scss']
 })
 export class SidenavDriversRegardComponent implements OnInit, OnDestroy {
+  dataSource = [];
+  earnings = [];
 
   constructor(
-    public db: AngularFirestore,
+    private _queueSidenavDriversService: QueueSidenavDriversService,
     private _pageFrameComponent: PageFrameComponent
-  ) { }
+  ) {
+    // use this subject to avoid memory leaks. 
+    // All obs. are done after the component was destroyed.
+    this._unsubscribeAll = new Subject();
+  }
 
-  dataSource = [
-    {driver_code: 10025, secondDriverCode: 20025, thirdDriverCode: 30025},
-    {driver_code: 10026, secondDriverCode: 20026, thirdDriverCode: 30025},
-    {driver_code: 10027, secondDriverCode: 20027, thirdDriverCode: 30025},
-    {driver_code: 10028, secondDriverCode: 20028, thirdDriverCode: 30025},
-    {driver_code: 10029, secondDriverCode: 20029, thirdDriverCode: 30025},
-  ];
+  private _unsubscribeAll: Subject<any>;
+
   ngOnInit(): void {
+    combineLatest([
+      this._queueSidenavDriversService.queueSidenavDrivers$,
+      this._queueSidenavDriversService.queueAdditionalSidenavDrivers$
+    ])
+    .pipe(takeUntil(this._unsubscribeAll))
+    .subscribe((data) =>{
+      // I made that just to learn forkJoin and combineLatest
+      data[0].map((e) =>{
+        this.dataSource.push({...e})
+      })
+      data[1].map((addelm) =>{
+        this.earnings.push(addelm)
+      })
+      this.dataSource.forEach((item, index) =>{
+        let a = this.earnings[index]
+        this.dataSource[index] = {...item, ...a}
+      })
+    })
   }
 
   ngOnDestroy(): void {
     this._pageFrameComponent.closeSidenavDrawer();
   }
-
 }
