@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { PageFrameSidenavService } from '../../services/page-frame-sidenav.service';
 import { PageFrameComponent } from '../page-frame/page-frame.component';
 
 @Component({
@@ -6,14 +9,34 @@ import { PageFrameComponent } from '../page-frame/page-frame.component';
   templateUrl: './page-frame-sidenav.component.html',
   styleUrls: ['./page-frame-sidenav.component.scss']
 })
-export class PageFrameSidenavComponent implements OnInit {
+export class PageFrameSidenavComponent implements OnInit, OnDestroy {
+  private _unsubscribeAll: Subject<any>;
+  tabs:any;
 
   constructor(
+    private _changeDetectorRef: ChangeDetectorRef,
+    private _pageFrameSidenavService: PageFrameSidenavService,
     private _pageFrameComponent: PageFrameComponent
-  ) { }
+  ) { 
+    this._unsubscribeAll = new Subject();
+  }
 
   ngOnInit(): void {
     this._pageFrameComponent.openSidenavDrawer();
+
+    this._pageFrameSidenavService.sidenavCustomTabs$
+    .pipe(takeUntil(this._unsubscribeAll))
+    .subscribe((tabs) =>{
+      if(tabs) {
+        this.tabs = tabs;
+        this._changeDetectorRef.detectChanges();
+      }
+    })
+  }
+
+  ngOnDestroy() {
+    this._unsubscribeAll.next();
+    this._unsubscribeAll.complete();
   }
 
 }

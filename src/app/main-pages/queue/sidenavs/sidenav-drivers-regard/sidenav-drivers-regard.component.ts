@@ -1,21 +1,21 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { combineLatest, Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
-import { PageFrameComponent } from 'src/app/shared/components/page-frame/page-frame.component';
 import { QueueSidenavDriversService } from 'src/app/shared/services/.services';
+import { PageFrameSidenavService } from 'src/app/shared/services/page-frame-sidenav.service';
 
 @Component({
   selector: 'app-sidenav-drivers-regard',
   templateUrl: './sidenav-drivers-regard.component.html',
   styleUrls: ['./sidenav-drivers-regard.component.scss']
 })
-export class SidenavDriversRegardComponent implements OnInit, OnDestroy {
+export class SidenavDriversRegardComponent implements OnInit {
   dataSource = [];
   earnings = [];
 
   constructor(
-    private _queueSidenavDriversService: QueueSidenavDriversService,
-    private _pageFrameComponent: PageFrameComponent
+    private _pageFrameSidenavService: PageFrameSidenavService,
+    private _queueSidenavDriversService: QueueSidenavDriversService
   ) {
     // use this subject to avoid memory leaks. 
     // All obs. are done after the component was destroyed.
@@ -25,6 +25,7 @@ export class SidenavDriversRegardComponent implements OnInit, OnDestroy {
   private _unsubscribeAll: Subject<any>;
 
   ngOnInit(): void {
+    
     combineLatest([
       this._queueSidenavDriversService.queueSidenavDrivers$,
       this._queueSidenavDriversService.queueAdditionalSidenavDrivers$
@@ -43,9 +44,23 @@ export class SidenavDriversRegardComponent implements OnInit, OnDestroy {
         this.dataSource[index] = {...item, ...a}
       })
     })
+
+    // Introducing the tabs dynamic.
+    this.introducTabs();
   }
 
-  ngOnDestroy(): void {
-    this._pageFrameComponent.closeSidenavDrawer();
+  introducTabs() {
+    const tabs: any = [
+      {
+        path: "bookDriver",
+        title: "BookletDriver"
+      },
+      {
+        path: "bookRate",
+        title: "BookletRate"
+      }
+    ]
+
+    this._pageFrameSidenavService.updateSidenavCustomTabs(tabs);
   }
 }

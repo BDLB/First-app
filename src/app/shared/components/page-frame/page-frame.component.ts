@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 
 import { pageFrameConfig } from './page-frame.config';
 import { MatDrawer } from "@angular/material/sidenav";
@@ -31,7 +31,7 @@ export class PageFrameComponent implements OnInit {
 
   onBackdropClicked(): void {
     this.closeSidenavDrawer();
-}
+  }
 
   // This fct must containt the scenario when you close 
   // the sidenav and the URL must go back to Tab URL.

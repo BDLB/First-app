@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PageFrameComponent } from 'src/app/shared/components/page-frame/page-frame.component';
 
 @Component({
@@ -6,17 +6,11 @@ import { PageFrameComponent } from 'src/app/shared/components/page-frame/page-fr
   templateUrl: './sidenav-rates-regard.component.html',
   styleUrls: ['./sidenav-rates-regard.component.scss']
 })
-export class SidenavRatesRegardComponent implements OnInit, OnDestroy {
+export class SidenavRatesRegardComponent implements OnInit {
 
-  constructor(
-    private _pageFrameComponent: PageFrameComponent
-  ) { }
+  constructor( ) { }
 
   ngOnInit(): void {
-  }
-
-  ngOnDestroy(): void {
-    this._pageFrameComponent.closeSidenavDrawer();
   }
 
 }
