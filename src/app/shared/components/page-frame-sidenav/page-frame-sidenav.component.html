@@ -3,9 +3,11 @@
         <!-- The class below is applied when routerLink match the value -->
         <!-- It targets the routerLink in a tag -->
         <div routerLinkActive="navigation_active" *ngFor="let tab of tabs">
+            <!-- That routerLink is responsable just for PageFrameSidenavComponent
+                children array!! -->
             <a
                 routerLinkActive="active_tab"
-                [routerLink]="[].concat(tab.path)"
+                [routerLink]="tab.path"
             >
                 <span>
                     {{ tab.title }}
