@@ -12,6 +12,7 @@ import { PageFrameSidenavComponent } from './components/page-frame-sidenav/page-
 import { BaseColumnComponent } from './components/base-column/base-column.component';
 import { PageFrameComponent } from './components/page-frame/page-frame.component';
 import { RouterModule } from '@angular/router';
+import { MaterialSharedActionsColumnComponent } from './components/material-shared-actions-column/material-shared-actions-column.component';
 
 @NgModule({
     declarations: [
@@ -21,6 +22,7 @@ import { RouterModule } from '@angular/router';
         SidenavDriverComponent,
         BaseColumnComponent,
         PageFrameComponent,
+        MaterialSharedActionsColumnComponent,
     ],
     imports: [
         RouterModule,
@@ -31,6 +33,7 @@ import { RouterModule } from '@angular/router';
         CommonModule,
     ],
     exports: [
+        MaterialSharedActionsColumnComponent,
         MaterialSharedTextColumnComponent,
         MaterialSharedTableComponent,
     ]

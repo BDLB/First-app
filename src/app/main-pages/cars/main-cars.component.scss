@@ -1,0 +1,10 @@
+app-main-cars {
+  .bg-color-white {
+    color: white !important;
+  }
+  table {
+    .mat-header-cell {
+      border-right: 0.05rem solid white;
+    }
+  }
+}

@@ -17,7 +17,6 @@ import { MainInProgressComponent } from './main-pages/in-progress/main-in-progre
 import { MainPersonnelComponent } from './main-pages/personnel/main-personnel.component';
 import { MainDriversComponent } from './main-pages/drivers/main-drivers.component';
 import { MainTrucksComponent } from './main-pages/trucks/main-trucks.component';
-import { MainCarsComponent } from './main-pages/cars/main-cars.component';
 import { QueueModule } from './main-pages/queue/queue.module';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -29,7 +28,6 @@ import { AppComponent } from './app.component';
     MainPersonnelComponent,
     MainDriversComponent,
     MainTrucksComponent,
-    MainCarsComponent,
     SidenavComponent,
     AppComponent
   ],

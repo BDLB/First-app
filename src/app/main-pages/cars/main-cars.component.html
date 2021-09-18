@@ -1,3 +1,39 @@
 <div class="main_page-position">
-    <p>main-cars works!</p>
+    <material-shared-table
+        [sharedDataSource]="dataSource"
+    >
+        <material-shared-text-column
+            [name]="'driver_id'"
+            columnLabel="Driver ID"
+        ></material-shared-text-column>
+        <material-shared-actions-column
+            [name]="'edit'"
+            columnLabel=""
+            dataClass="text-center"
+        ></material-shared-actions-column>
+        <material-shared-text-column
+            [name]="'driver_name'"
+            columnLabel="Driver Name"
+            headerClass="pl-3"
+            dataClass="pl-3"
+        ></material-shared-text-column>
+        <material-shared-text-column
+            [name]="'vehicle_id'"
+            columnLabel="Vehicle ID"
+            headerClass="pl-3"
+            dataClass="pl-3"
+        ></material-shared-text-column>
+        <material-shared-text-column
+            [name]="'phonePrimary'"
+            columnLabel="Primary Phone#"
+            headerClass="pl-3"
+            dataClass="pl-3"
+        ></material-shared-text-column>
+        <material-shared-text-column
+            [name]="'last_note'"
+            columnLabel="Last Note"
+            headerClass="pl-3"
+            dataClass="pl-3"
+        ></material-shared-text-column>
+    </material-shared-table>
 </div>

@@ -2,7 +2,7 @@
     <th mat-header-cell *matHeaderCellDef [ngClass]="headerClass"
     >{{columnLabel}}</th>
     <td mat-cell *matCellDef="let element" [ngClass]="dataClass"
-    >{{element[name]}}</td>
+    >{{element.model[name]}}</td>
     <!--The element represents the hole column dataSource and the name
         targest the specific column. -->
 </ng-container>

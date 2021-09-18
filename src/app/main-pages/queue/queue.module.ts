@@ -12,13 +12,14 @@ import { CommonModule } from "@angular/common";
 import { NgModule } from "@angular/core";
 
 import { NgxMaterialTimepickerModule } from "ngx-material-timepicker";
+
+import { SidenavDriversRegardComponent } from './sidenavs/sidenav-drivers-regard/sidenav-drivers-regard.component';
+import { SidenavRatesRegardComponent } from './sidenavs/sidenav-rates-regard/sidenav-rates-regard.component'
 import { NewCommandComponent } from "./new-command/new-command.component";
 import { CommandsComponent } from "./commands/commands.component";
 import { MainQueueComponent } from "./main-queue.component";
 import { SharedModule } from "src/app/shared/shared.module";
 import { queueRoutes } from "./queue-routing.module";
-import { SidenavDriversRegardComponent } from './sidenavs/sidenav-drivers-regard/sidenav-drivers-regard.component';
-import { SidenavRatesRegardComponent } from './sidenavs/sidenav-rates-regard/sidenav-rates-regard.component'
 
 @NgModule({
     declarations:[
@@ -33,7 +34,6 @@ import { SidenavRatesRegardComponent } from './sidenavs/sidenav-rates-regard/sid
         NgxMaterialTimepickerModule,
         BrowserAnimationsModule,
         MatButtonToggleModule,
-        ReactiveFormsModule,
         ReactiveFormsModule,
         MatFormFieldModule,
         MatCheckboxModule,

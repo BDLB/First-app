@@ -45,6 +45,12 @@ export class SidenavDriversRegardComponent implements OnInit {
       })
     })
 
+    this.dataSource = this.dataSource.map((item) => {
+      return {
+        model: item
+      }
+    })
+
     // Introducing the tabs dynamic.
     this.introducTabs();
   }

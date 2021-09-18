@@ -1,12 +1,17 @@
-// The .freeze method returns the same obj. and
-// prevent this for changing
+// The .freeze method returns the same obj. and  |
+// prevent this for changing                     |
+// -----------------------------------------------
+// --------------------------------
+// Sidenavs configuration objects |
+// are made in every sidenav page |
+// -------------------------------
 export const pageFrameConfig = Object.freeze({
     queue: {
         mainpage: {
             tabs: [
                 {
-                    path: "primary",
-                    title: "ALL"
+                    path: "general",
+                    title: "General"
                 }
             ],
             buttons: {},
@@ -23,7 +28,22 @@ export const pageFrameConfig = Object.freeze({
         }
 
     },
-    in_progress: {
+    cars: {
+        mainpage: {
+            tabs: [
+                {
+                    path: "general",
+                    title: "General"
+                }
+            ],
+            buttons: {}
+        },
+        sidenavs: {
+            CreateEdit: {
+                tabs: {},
+                buttons: {}
+            }
+        }
+    }
 
-    },
 })
