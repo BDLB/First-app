@@ -1,0 +1,195 @@
+app-sidenav-regards-cars {
+  .content-wrapper {
+    max-height: 90%;
+    margin-top: 20px;
+    margin-left: 30px;
+    .page-row {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+    }
+  }
+
+  .sidenav-driver-content {
+    display: grid;
+    grid-template-rows: repeat(13, 1fr);
+  }
+
+  .vehicle-form-field {
+    @extend %general-form-fields;
+    order: 1;
+  }
+
+  .driver_name-form-field {
+    @extend .general-form-fields;
+    order: 1;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 55%;
+
+    .mat-form-field-flex {
+      height: 1.7rem;
+      justify-content: center;
+    }
+  }
+
+  %general-form-fields {
+    .mat-form-field-underline {
+      display: none;
+    }
+
+    .mat-form-field-infix {
+      top: -15px;
+    }
+  }
+
+  mat-button-toggle-group {
+    order: 1;
+    height: fit-content;
+    width: fit-content;
+
+    .mat-button-toggle-label-content {
+      padding: 0px 10px !important;
+      display: flex;
+      align-items: center;
+      height: 38px;
+      line-height: 35px !important;
+    }
+  }
+
+  mat-button-toggle-group {
+    order: 1;
+    height: fit-content;
+    width: fit-content;
+
+    .mat-button-toggle-label-content {
+      padding: 0px 10px !important;
+      display: flex;
+      align-items: center;
+      height: 38px;
+      line-height: 35px !important;
+    }
+  }
+
+  .vehicle-form-field {
+    @extend .general-form-fields;
+    order: 1;
+  }
+
+  
+
+  .driver_id-form-field {
+    @extend .general-form-fields;
+    order: 1;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 28%;
+
+    .mat-form-field-flex {
+      height: 1.7rem;
+      justify-content: center;
+    }
+  }
+
+  .address-form-field {
+    @extend .general-form-fields;
+    order: 1;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 40%;
+
+    .mat-form-field-flex {
+      height: 1.7rem;
+      justify-content: center;
+    }
+  }
+
+  .citizenship-form-field {
+    @extend .general-form-fields;
+    order: 1;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 27%;
+
+    .mat-form-field-flex {
+      height: 1.7rem;
+      justify-content: center;
+    }
+  }
+
+  .email-form-field {
+    @extend .general-form-fields;
+    order: 1;
+
+    .mat-form-field-flex {
+      height: 1.7rem;
+      justify-content: center;
+    }
+  }
+
+  .phone-form-field {
+    @extend .general-form-fields;
+    order: 1;
+
+    .mat-form-field-flex {
+      height: 1.7rem;
+      justify-content: center;
+    }
+  }
+
+  .hired-form-field {
+    @extend .general-form-fields;
+    order: 1;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 27%;
+
+    .mat-form-field-flex {
+      height: 1.7rem;
+      justify-content: center;
+    }
+  }
+
+  .driving_experience-form-field,
+  .pay_targets-form-field,
+  .payment_type-form-field {
+    @extend .general-form-fields;
+    order: 1;
+    display: inline-flex;
+    justify-content: space-between;
+    width: 40%;
+
+    .mat-form-field-flex {
+      height: 1.7rem;
+      justify-content: center;
+    }
+  }
+
+  .birth_date-form-field {
+    @extend .general-form-fields;
+    order: 1;
+
+    .mat-form-field-flex {
+      height: 1.7rem;
+      justify-content: center;
+    }
+  }
+
+  // ---------------------------------------------
+  // General classes used in multiple places      |
+  // ----------------------------------------------
+
+  mat-form-field {
+    height: 30px;
+    border: 1px solid white;
+  }
+
+  .general-form-fields {
+    .mat-form-field-underline {
+      display: none;
+    }
+
+    .mat-form-field-infix {
+      top: -15px;
+    }
+  }
+}

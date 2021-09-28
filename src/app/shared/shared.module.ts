@@ -7,7 +7,6 @@ import { NgModule } from '@angular/core';
 
 import { MaterialSharedTextColumnComponent } from './components/material-shared-text-column/material-shared-text-column.component';
 import { MaterialSharedTableComponent } from './components/material-shared-table/material-shared-table.component';
-import { SidenavDriverComponent } from '../main-pages/queue/sidenavs/sidenav-driver/sidenav-driver.component';
 import { PageFrameSidenavComponent } from './components/page-frame-sidenav/page-frame-sidenav.component';
 import { BaseColumnComponent } from './components/base-column/base-column.component';
 import { PageFrameComponent } from './components/page-frame/page-frame.component';
@@ -19,7 +18,6 @@ import { MaterialSharedActionsColumnComponent } from './components/material-shar
         MaterialSharedTextColumnComponent,
         MaterialSharedTableComponent,
         PageFrameSidenavComponent,
-        SidenavDriverComponent,
         BaseColumnComponent,
         PageFrameComponent,
         MaterialSharedActionsColumnComponent,

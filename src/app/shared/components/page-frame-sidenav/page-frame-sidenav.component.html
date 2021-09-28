@@ -1,12 +1,12 @@
-<mat-toolbar class="toolbar">
-    <div class="navigation_routes">
+<mat-toolbar class="sidenav_toolbar">
+    <div class="sidenav-navigation_routes">
         <!-- The class below is applied when routerLink match the value -->
         <!-- It targets the routerLink in anchor tag -->
-        <div routerLinkActive="navigation_active" *ngFor="let tab of tabs">
+        <div routerLinkActive="navigation_active" class="ml-1" *ngFor="let tab of tabs">
             <!-- That routerLink is responsable just for PageFrameSidenavComponent
                 children array!! -->
             <a
-                routerLinkActive="active_tab"
+                routerLinkActive="sidenav-active_tab"
                 [routerLink]="tab.path"
             >
                 <span>
@@ -14,6 +14,9 @@
                 </span>
             </a>
         </div>
+    </div>
+    <div *ngIf="sidenavCustomTitle" class="ml-20">
+        {{ sidenavCustomTitle }}
     </div>
 </mat-toolbar>
 <router-outlet></router-outlet>

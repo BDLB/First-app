@@ -1,1 +1,224 @@
-<p>sidenav-regards-cars works!</p>
+<form [formGroup]="sDrivers" (ngSubmit)="onSubmit()">
+  <div class="content-wrapper">
+    <div class="page-row">
+      <p class="col-span-1">Status:</p>
+      <div>
+        <mat-button-toggle-group
+          appearance="legacy"
+          name="fontStyle"
+          aria-label="Font Style"
+          [formControlName]="'toggle_buttons'"
+        >
+          <mat-button-toggle value="active" (click)="onSubmit()"
+            >Active</mat-button-toggle
+          >
+          <mat-button-toggle value="retired">Retired</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+    </div>
+    <div class="page-row">
+      <p class="col-span-1">Vehicle:</p>
+      <div class="vehicle-form-field">
+        <mat-form-field floatLabel="never">
+          <input
+            [formControlName]="'vehicle'"
+            matInput
+            type="text"
+            placeholder="Vehicle"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="page-row">
+      <p class="col-span-1">Driver Name:</p>
+      <div class="driver_name-form-field">
+        <mat-form-field appearance="fill" floatLabel="never">
+          <mat-select placeholder="Sal." [formControlName]="'salutation'">
+            <mat-option value="mr">Mr.</mat-option>
+            <mat-option value="mrs">Mrs.</mat-option>
+            <mat-option value="ms">Ms.</mat-option>
+            <mat-option value="n/a">N/A</mat-option>
+            <!-- TODO: Options with array iteration -->
+            <!-- <mat-option
+              *ngFor="let salutation of salutations"
+              [value]="salutation.value"
+            >
+              {{ food.viewValue }}
+            </mat-option> -->
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field floatLabel="never">
+          <input
+            matInput
+            [formControlName]="'first_name'"
+            type="text"
+            placeholder="First Name"
+          />
+        </mat-form-field>
+        <mat-form-field floatLabel="never">
+          <input
+            matInput
+            type="text"
+            placeholder="Initial"
+            [formControlName]="'initial'"
+          />
+        </mat-form-field>
+        <mat-form-field floatLabel="never">
+          <input
+            matInput
+            type="text"
+            placeholder="Last Name"
+            [formControlName]="'last_name'"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="page-row">
+      <p class="col-span-1">Driver ID:</p>
+      <div class="driver_id-form-field">
+        <mat-form-field floatLabel="never">
+          <input
+            matInput
+            type="text"
+            placeholder="Car ID"
+            [formControlName]="'id'"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="fill" floatLabel="never">
+          <mat-select
+            placeholder="Availability"
+            [formControlName]="'availability'"
+          >
+            <mat-option value="available">Available</mat-option>
+            <mat-option value="on_vacantion">On Vacantion</mat-option>
+            <mat-option value="short_break">Short Break</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="page-row">
+      <p class="col-span-1">Address:</p>
+      <div class="address-form-field">
+        <mat-form-field floatLabel="never">
+          <input
+            matInput
+            type="text"
+            placeholder="Country"
+            [formControlName]="'country'"
+          />
+        </mat-form-field>
+        <mat-form-field floatLabel="never">
+          <input
+            matInput
+            type="text"
+            placeholder="City"
+            [formControlName]="'city'"
+          />
+        </mat-form-field>
+        <mat-form-field floatLabel="never">
+          <input
+            matInput
+            type="text"
+            placeholder="Address"
+            [formControlName]="'address'"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="page-row">
+      <p class="col-span-1">Birth Date:</p>
+      <div class="birth_date-form-field">
+        <p>TODO: DATEPICKER</p>
+      </div>
+    </div>
+    <div class="page-row">
+      <p class="col-span-1">Citizenship:</p>
+      <div class="citizenship-form-field">
+        <mat-form-field floatLabel="never">
+          <input
+            matInput
+            type="text"
+            placeholder="#1"
+            [formControlName]="'first_citizenship'"
+          />
+        </mat-form-field>
+        <mat-form-field floatLabel="never">
+          <input
+            matInput
+            type="text"
+            placeholder="#2"
+            [formControlName]="'second_citizenship'"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="page-row">
+      <p class="col-span-1">E-mail:</p>
+      <div class="email-form-field">
+        <mat-form-field floatLabel="never">
+          <input
+            matInput
+            type="text"
+            placeholder="E-mail address"
+            [formControlName]="'email'"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="page-row">
+      <p class="col-span-1">*Phone number:</p>
+      <div class="phone-form-field">
+        <mat-form-field floatLabel="never">
+          <input matInput type="text" [formControlName]="'first_phone_number'" />
+        </mat-form-field>
+        <mat-button-toggle-group
+          appearance="legacy"
+          name="fontStyle"
+          aria-label="Font Style"
+        >
+          <mat-button-toggle value="active">CELL</mat-button-toggle>
+          <mat-button-toggle value="retired">HOME</mat-button-toggle>
+        </mat-button-toggle-group>
+        <mat-form-field floatLabel="never">
+          <input matInput type="text" [formControlName]="'second_phone_number'" />
+        </mat-form-field>
+        <mat-button-toggle-group
+          appearance="legacy"
+          name="fontStyle"
+          aria-label="Font Style"
+        >
+          <mat-button-toggle value="active">CELL</mat-button-toggle>
+          <mat-button-toggle value="retired">HOME</mat-button-toggle>
+        </mat-button-toggle-group>
+      </div>
+    </div>
+    <div class="page-row">
+      <p class="col-span-1">Hired:</p>
+      <div class="hired-form-field">
+        <p>TODO: DATEPICKER</p>
+        <mat-form-field floatLabel="never">
+          <input
+            matInput
+            type="text"
+            placeholder="By"
+            [formControlName]="'employer'"
+          />
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="page-row">
+      <p class="col-span-1">Driving Experience:</p>
+      <div class="driving_experience-form-field">
+        <p>Since:</p>
+        <p>TODO: DATEPICKER</p>
+        <p>For:</p>
+        <mat-form-field floatLabel="never">
+          <input
+            matInput
+            type="number"
+            placeholder="Years"
+            [formControlName]="'for_driving_experience'"
+          />
+        </mat-form-field>
+      </div>
+  </div>

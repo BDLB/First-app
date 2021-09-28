@@ -1,3 +1,14 @@
-.navigation_routes {
-    display: flex;
+app-page-frame-sidenav {
+    .sidenav-navigation_routes {
+        display: flex;
+    }
+
+    .sidenav_toolbar {
+        background-color: #424242;
+        margin-left: 11px !important;
+    }
+
+    .sidenav-active_tab {
+        background-color: antiquewhite;
+    }
 }

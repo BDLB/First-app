@@ -8,13 +8,22 @@ import { Subject } from "rxjs";
     providedIn: "root"
 })
 export class PageFrameSidenavService {
+    sidenavTitle: Subject<any> = new Subject<any>();
     sidenavTabs: Subject<any> = new Subject<any>();
 
     get sidenavCustomTabs$() {
         return this.sidenavTabs.asObservable();
     }
 
+    get sidenavCustomTitle$() {
+        return this.sidenavTitle.asObservable();
+    }
+
     updateSidenavCustomTabs(tabs) {
         this.sidenavTabs.next(tabs);
+    }
+
+    notitySidenavTitle(title) {
+        this.sidenavTitle.next(title);
     }
 }

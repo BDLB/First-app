@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
 import { PageFrameSidenavService } from '../../services/page-frame-sidenav.service';
@@ -7,10 +7,12 @@ import { PageFrameComponent } from '../page-frame/page-frame.component';
 @Component({
   selector: 'app-page-frame-sidenav',
   templateUrl: './page-frame-sidenav.component.html',
-  styleUrls: ['./page-frame-sidenav.component.scss']
+  styleUrls: ['./page-frame-sidenav.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class PageFrameSidenavComponent implements OnInit, OnDestroy {
   private _unsubscribeAll: Subject<any>;
+  sidenavCustomTitle: string;
   tabs:any;
 
   constructor(
@@ -31,6 +33,12 @@ export class PageFrameSidenavComponent implements OnInit, OnDestroy {
         this.tabs = tabs;
         this._changeDetectorRef.detectChanges();
       }
+    })
+
+    this._pageFrameSidenavService.sidenavCustomTitle$
+    .pipe(takeUntil(this._unsubscribeAll))
+    .subscribe((sidenavTitle) => {
+      this.sidenavCustomTitle = sidenavTitle;
     })
   }
 
