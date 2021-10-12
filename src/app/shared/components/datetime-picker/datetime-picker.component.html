@@ -1,0 +1,32 @@
+<ng-container [ngSwitch]="shownType">
+  <ng-container *ngSwitchCase="displayPicker.InputCalendar">
+    <mat-form-field
+      #originDatePanel
+      (click)="enabled && openDatePanel(originDatePanel, pickerPanel)"
+    >
+      <!-- Date Pipe -->
+      <input
+        readonly
+        matInput
+        [placeholder]="placeholder"
+        [value]="[datetime | date: dateFormat]"
+      >
+      <mat-icon
+        matSuffix
+      >
+        <i class="far fa-calendar-alt datetime-icon"></i>
+      </mat-icon>
+    </mat-form-field>
+  </ng-container>
+</ng-container>
+
+<form [formGroup]="dateTimePickerForm">
+  <ng-template #pickerPanel>
+    <shared-tooltip>
+      <mat-calendar
+        [selected]="this.dateTimePickerForm.get('date').value"
+        (selectedChange)="onSelect($event)"
+      ></mat-calendar>
+    </shared-tooltip>
+  </ng-template>
+</form>

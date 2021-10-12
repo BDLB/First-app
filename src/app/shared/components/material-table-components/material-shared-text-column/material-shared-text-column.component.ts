@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { BaseColumnComponent } from '../base-column/base-column.component';
+import { BaseColumnComponent } from '../../base-column/base-column.component';
 
 @Component({
   selector: 'material-shared-text-column',

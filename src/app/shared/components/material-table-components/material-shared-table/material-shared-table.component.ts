@@ -4,7 +4,7 @@ import { AfterViewInit,
   ContentChildren, 
   Input, 
   QueryList, ViewChild } from '@angular/core';
-import { BaseColumnComponent } from '../base-column/base-column.component';
+import { BaseColumnComponent } from './../../base-column/base-column.component';
 import { MatTable } from '@angular/material/table';
 
 @Component({
