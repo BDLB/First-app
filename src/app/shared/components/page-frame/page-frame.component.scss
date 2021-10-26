@@ -2,6 +2,10 @@ app-page-frame {
     .drawer-wrapper {
         margin-top: -17px;
     }
+
+    .mat-drawer-inner-container {
+        overflow: unset !important;
+    }
     
     .mat-toolbar {
         height: 50px;
@@ -24,6 +28,6 @@ app-page-frame {
     }
     
     .sidenav {
-        width: 1640px;
+        width: 83%;
     }
 }

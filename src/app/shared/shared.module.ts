@@ -15,6 +15,7 @@ import { SharedTooltipComponent } from './components/shared-tooltip/shared-toolt
 import { BaseColumnComponent } from './components/base-column/base-column.component';
 import { PageFrameComponent } from './components/page-frame/page-frame.component';
 import { RouterModule } from '@angular/router';
+import { SharedTooltipsDocumentsComponent } from './components/shared-tooltips-documents/shared-tooltips-documents.component';
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import { RouterModule } from '@angular/router';
         SharedTooltipComponent,
         BaseColumnComponent,
         PageFrameComponent,
+        SharedTooltipsDocumentsComponent,
     ],
     imports: [
         RouterModule,
@@ -39,8 +41,11 @@ import { RouterModule } from '@angular/router';
     exports: [
         MaterialSharedActionsColumnComponent,
         MaterialSharedTextColumnComponent,
+        SharedTooltipsDocumentsComponent,
         MaterialSharedTableComponent,
-        DatetimePickerComponent
+        DatetimePickerComponent,
+        SharedTooltipComponent,
+        CommonModule
     ]
 })
 export class SharedModule { }

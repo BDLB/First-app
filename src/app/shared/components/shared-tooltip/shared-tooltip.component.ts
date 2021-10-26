@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'shared-tooltip',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shared-tooltip.component.scss']
 })
 export class SharedTooltipComponent implements OnInit {
+  @Input()tooltipConfig?: any;
 
   constructor() { }
 

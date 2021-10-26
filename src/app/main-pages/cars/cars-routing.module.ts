@@ -6,7 +6,7 @@ import { PageFrameSidenavComponent } from 'src/app/shared/components/page-frame-
 import { SidenavRegardsCarsComponent } from './sidenavs/sidenav-regards-cars/sidenav-regards-cars.component';
 import { PageFrameComponent } from 'src/app/shared/components/page-frame/page-frame.component';
 import { MainCarsComponent } from './main-cars.component';
-import { RegardsCarsConfigResolver, RegardsCarsResolver } from 'src/app/shared/resolvers/.resolvers';
+import { RegardsCarsConfigResolver, RegardsCarsDocsResolver, RegardsCarsResolver } from 'src/app/shared/resolvers/.resolvers';
 
 export const inventoryCarsRoutes: Routes = [
   {
@@ -39,6 +39,9 @@ export const inventoryCarsRoutes: Routes = [
           {
             path: 'docs',
             component: SidenavRegardsCarsDocumentsComponent,
+            resolve: {
+              document: RegardsCarsDocsResolver
+            }
           },
           {
             path: 'notes',

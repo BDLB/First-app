@@ -9,16 +9,18 @@
             <ng-container *ngIf="action.label">
                 {{action.label}}
             </ng-container>
-            <ng-container #tooltipOrigin>
-                <mat-icon
-                    *ngIf="action.svgIcon"
-                    (click)="action.action(tooltipOrigin)"
-                >
-                    <i 
-                        [class]="action.svgIcon"
-                        [ngClass]="action.iconClass"
-                    ></i>
-                </mat-icon>
+            <ng-container>
+                <span #tooltipOrigin>
+                    <mat-icon
+                        *ngIf="action.svgIcon"
+                        (click)="action.action && action.action(tooltipOrigin)"
+                    >
+                        <i 
+                            [class]="action.svgIcon"
+                            [ngClass]="action.iconClass"
+                        ></i>
+                    </mat-icon>
+                </span>
             </ng-container>
         </ng-container>
     </td>

@@ -46,7 +46,7 @@ export class DatetimePickerComponent implements OnInit {
     // TemplateRef is an instance of a template.
   ): void {
     console.log(tooltipOrigin)
-    this._dateTimeOverlayRef = this._tooltipService.opentTooltip(
+    this._dateTimeOverlayRef = this._tooltipService.openTooltip(
       tooltipOrigin._elementRef.nativeElement,
       tooltipPanel,
       this._viewContainerRef

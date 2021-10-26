@@ -1,1 +1,26 @@
-<p>sidenav-regards-cars-documents works!</p>
+<div *ngIf="dataInit" class="content-wrapper">
+  <material-shared-table 
+    [sharedDataSource]="dataSource"
+  >
+    <material-shared-text-column
+      [name]="'documentType'"
+      columnLabel="Type"
+    ></material-shared-text-column>
+    <material-shared-text-column
+      [name]="'documentNote'"
+      columnLabel="Note"
+    ></material-shared-text-column>
+    <material-shared-actions-column
+      [name]="'documentActions'"
+      columnLabel="Docs"
+      headerClass="actions-column p-0 text-center"
+      dataClass="actions-column pr-2 pl-2 text-center"
+    ></material-shared-actions-column>
+  </material-shared-table>
+</div>
+
+<!-- Action view documents tooltip -->
+<ng-template #viewDocumentsActionTooltip>
+  <shared-tooltips-documents>
+  </shared-tooltips-documents>
+</ng-template>

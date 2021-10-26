@@ -7,6 +7,7 @@ import {
 import { forkJoin, Observable, of, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { RegardMainInfoService } from '../services/.services';
+import { RegardCarsDocsService } from '../services/cars-module-services/regard-cars-docs.service';
 
 @Injectable({
   providedIn: 'root',
@@ -57,6 +58,29 @@ export class RegardsCarsResolver implements Resolve<any> {
           // Throw an error in console
           return throwError(error)
       })
+      )
+    ])
+  }
+}
+
+@Injectable({
+  providedIn: "root"
+})
+export class RegardsCarsDocsResolver implements Resolve<any>{
+  constructor(
+    private _regardCarsDocsService: RegardCarsDocsService
+  ) {}
+  resolve(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<any> {
+    return forkJoin([
+      this._regardCarsDocsService.getDocsInfoData()
+      .pipe(
+        catchError((error) => {
+          console.error(error);
+          return throwError(error);
+        })
       )
     ])
   }

@@ -82,6 +82,50 @@ textarea, i {
     color: black !important;
 }
 
+.cdk-overlay-pane.shared-tooltip {
+    background: white;
+    border: 1px solid lightgray;
+    box-shadow: 1px 1px 4px 1px lightgray;
+    padding: 16px;
+    font-size: 14px;
+}
+
+.arrow {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 15px;
+    background: white;
+    border: 1px solid;
+    border-color: transparent transparent lightgray lightgray;
+    box-shadow: -1px 1px lightgrey;
+
+    &.arrow-bottom {
+        left: 50%;
+        top: calc(100% + 11px);
+        transform: translate(-50%, calc(100% - 33px)) rotate(-45deg);
+    }
+
+    &.arrow-top {
+        left: 50%;
+        top: -11px;
+        transform: translate(-50%, calc(-100% + 19px)) rotate(135deg);
+    }
+
+    &.arrow-left {
+        left: -11px;
+        top: 50%;
+        transform: translate(calc(-100% + 19px), -50%) rotate(45deg);
+    }
+
+    &.arrow-right {
+        left: calc(100% + 11px);
+        top: 50%;
+        transform: translate(calc(100% - 33px), -50%) rotate(-135deg);
+    }
+}
+
 table {
     width: 100%;
 }
