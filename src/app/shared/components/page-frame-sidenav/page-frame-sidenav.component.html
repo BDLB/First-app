@@ -2,7 +2,10 @@
     <div class="sidenav-navigation_routes">
         <!-- The class below is applied when routerLink match the value -->
         <!-- It targets the routerLink in anchor tag -->
-        <div routerLinkActive="navigation_active" class="ml-1" *ngFor="let tab of tabs">
+        <div routerLinkActive="navigation_active" 
+            *ngFor="let tab of tabs"
+            class="ml-1" 
+        >
             <!-- That routerLink is responsable just for PageFrameSidenavComponent
                 children array!! -->
             <a

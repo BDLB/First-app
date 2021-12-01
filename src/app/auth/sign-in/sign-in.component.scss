@@ -1,0 +1,70 @@
+sign-in {
+  .content-wrapper {
+    height: 100vh;
+    width: 100%;
+  }
+
+  .sign_inner-wrapper {
+    height: 60px;
+    font-weight: 800;
+    font-size: 25px;
+  }
+
+  .logo {
+    width: 179px;
+    height: 200px;
+    margin: 0 0 0 auto;
+    align-items: center;
+    background-image: url('./../Logo.png');
+  }
+
+  .image {
+    background-image: url('./../RoadWay.jpg');
+    width: 80%;
+    min-width: 400px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .sign_in-wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 9px 9px 9px 9px;
+    margin-left: auto;
+    margin-right: 10px;
+    width: 400px;
+    min-height: 53%;
+    padding: 40px 15px 20px 40px;
+  }
+
+  .credentials {
+    flex-direction: column;
+  
+    .pass-field,
+    .email-field {
+      .mat-form-field-flex {
+        padding: 0;
+      }
+      .mat-form-field-infix {
+        border: 2px solid #b2b2b2;
+        box-shadow: 3px 4px 7px 1px #c4c5c6;
+      }
+    }
+
+    .sign_in-button {
+      background-color: #475569;
+      color: #ffffff;
+      text-align: center;
+      line-height: 40px;
+    }
+
+    .mat-button-disabled {
+      color: #d9dde1 !important;
+      background-color: #475569 !important;
+    }
+  }
+}

@@ -16,6 +16,7 @@ import { BaseColumnComponent } from './components/base-column/base-column.compon
 import { PageFrameComponent } from './components/page-frame/page-frame.component';
 import { RouterModule } from '@angular/router';
 import { SharedTooltipsDocumentsComponent } from './components/shared-tooltips-documents/shared-tooltips-documents.component';
+import { SidenavComponent } from './components/sidenav-component/sidenav-component.component';
 
 @NgModule({
     declarations: [
@@ -27,6 +28,7 @@ import { SharedTooltipsDocumentsComponent } from './components/shared-tooltips-d
         SharedTooltipComponent,
         BaseColumnComponent,
         PageFrameComponent,
+        SidenavComponent,
         SharedTooltipsDocumentsComponent,
     ],
     imports: [

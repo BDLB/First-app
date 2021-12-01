@@ -12,7 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
-import { SidenavComponent } from './shared/components/sidenav-component/sidenav-component.component';
+
 import { MainInProgressComponent } from './main-pages/in-progress/main-in-progress.component';
 import { MainPersonnelComponent } from './main-pages/personnel/main-personnel.component';
 import { MainDriversComponent } from './main-pages/drivers/main-drivers.component';
@@ -28,8 +28,7 @@ import { AppComponent } from './app.component';
     MainPersonnelComponent,
     MainDriversComponent,
     MainTrucksComponent,
-    SidenavComponent,
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserAnimationsModule,

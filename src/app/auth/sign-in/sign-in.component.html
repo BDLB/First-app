@@ -1,0 +1,40 @@
+<form [formGroup]="authForm" (ngSubmit)="onSubmit()">
+<div class="content-wrapper">
+  <div class="image">
+    <div class="sign_in-wrapper">
+      <div class="w-full flex items-center sign_inner-wrapper">
+        Sign In
+        <div class="logo"></div>
+      </div>
+        <div class="w-full credentials flex">
+          <h6>E-mail address</h6>
+          <mat-form-field
+            floatLabel="never"
+            appearance="none"
+            class="email-field"
+          >
+            <input matInput type="email" ngModel [formControlName]="'email'" />
+          </mat-form-field>
+          <h6>Password</h6>
+          <mat-form-field
+            floatLabel="never"
+            appearance="fill"
+            class="pass-field"
+          >
+            <input matInput type="password" [formControlName]="'password'" />
+          </mat-form-field>
+          <button
+            type="submit"
+            mat-raised-button
+            color="primary"
+            class="sign_in-button w-full"
+            [disabled]="!authForm.valid"
+          >
+            Sign In
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+  
