@@ -44,7 +44,6 @@ sign-in {
   .credentials {
     flex-direction: column;
   
-    .pass-field,
     .email-field {
       .mat-form-field-flex {
         padding: 0;
@@ -52,6 +51,17 @@ sign-in {
       .mat-form-field-infix {
         border: 2px solid #b2b2b2;
         box-shadow: 3px 4px 7px 1px #c4c5c6;
+      }
+    }
+
+    .pass-field {
+      .mat-form-field-flex {
+        padding: 0;
+        border: 2px solid #b2b2b2;
+        box-shadow: 3px 4px 7px 1px #c4c5c6;
+        height: 40px;
+        display: flex;
+        align-items: center;
       }
     }
 

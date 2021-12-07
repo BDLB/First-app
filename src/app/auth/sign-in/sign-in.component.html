@@ -1,11 +1,11 @@
 <form [formGroup]="authForm" (ngSubmit)="onSubmit()">
-<div class="content-wrapper">
-  <div class="image">
-    <div class="sign_in-wrapper">
-      <div class="w-full flex items-center sign_inner-wrapper">
-        Sign In
-        <div class="logo"></div>
-      </div>
+  <div class="content-wrapper">
+    <div class="image">
+      <div class="sign_in-wrapper">
+        <div class="w-full flex items-center sign_inner-wrapper">
+          Sign In
+          <div class="logo"></div>
+        </div>
         <div class="w-full credentials flex">
           <h6>E-mail address</h6>
           <mat-form-field
@@ -21,7 +21,29 @@
             appearance="fill"
             class="pass-field"
           >
-            <input matInput type="password" [formControlName]="'password'" />
+            <input
+              #passwordInput
+              matInput
+              type="password"
+              [formControlName]="'password'"
+            />
+            <button
+              type="button"
+              mat-icon-button
+              matSuffix
+              (click)="
+                passwordInput.type === 'password'
+                  ? (passwordInput.type = 'text')
+                  : (passwordInput.type = 'password')
+              "
+            >
+              <mat-icon *ngIf="passwordInput.type === 'password'">
+                <i class="fas fa-eye"></i>
+              </mat-icon>
+              <mat-icon *ngIf="passwordInput.type === 'text'">
+                <i class="fas fa-eye-slash"></i>
+              </mat-icon>
+            </button>
           </mat-form-field>
           <button
             type="submit"
@@ -29,10 +51,11 @@
             color="primary"
             class="sign_in-button w-full"
             [disabled]="!authForm.valid"
-          > Sign In </button>
+          >
+            Sign In
+          </button>
         </div>
       </div>
     </div>
   </div>
 </form>
-  

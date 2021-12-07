@@ -1,7 +1,9 @@
 import { Component,
   OnInit, 
   OnDestroy, 
-  ViewEncapsulation 
+  ViewEncapsulation, 
+  ViewChild,
+  AfterViewInit
 } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -15,8 +17,9 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./sign-in.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class SignInComponent implements OnInit {
+export class SignInComponent implements OnInit, AfterViewInit {
   authForm: FormGroup;
+  @ViewChild('passwordInput') inputField: any;
 
   authentication: Subscription;
 
@@ -38,6 +41,10 @@ export class SignInComponent implements OnInit {
       email: ["", [Validators.email, Validators.required]],
       password: ["", [Validators.required, Validators.minLength(8)]] 
     })
+  }
+
+  ngAfterViewInit() {
+    console.log(this.inputField)
   }
 
   onSubmit() {
