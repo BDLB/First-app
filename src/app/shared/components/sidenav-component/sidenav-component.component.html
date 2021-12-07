@@ -1,7 +1,7 @@
 <div class="navigation" id="sidenav-navigation" >
     <ul>
         <li routerLinkActive="active_page-color">
-            <a [routerLink]="['general',{ outlets: { tab: ['queue']} }]">
+            <a [routerLink]="['/queue/general',{ outlets: { tab: ['queue']} }]">
             <span class="icon"><i class="fas fa-route"></i></span>
             <span class="title">Queue</span>
             </a>
@@ -13,7 +13,7 @@
             </a>
         </li>
         <li routerLinkActive="active_page-color">
-            <a [routerLink]="['inventory/cars/main',{ outlets: { tab: ['general']} }]">
+            <a [routerLink]="['/inventory/cars/main',{ outlets: { tab: ['general']} }]">
             <span class="icon"><i class="fas fa-car"></i></span>
             <span class="title">Cars</span>
             </a>

@@ -8,20 +8,26 @@ import { MainTrucksComponent } from './main-pages/trucks/main-trucks.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'sign-in', pathMatch: 'full' },
-  { path: 'sign-in', 
+  // { path: '**', redirectTo: 'sign-in'},
+  {
+    path: 'sign-in',
     loadChildren: () =>
-    import("src/app/auth/sign-in/sign-in.module").then(
-      (m) => m.SignInModule
-    ) 
-   },
-  // { path: '', redirectTo: '/general/(tab:queue)', pathMatch: 'full' },
-  // {
-  //   path: 'inventory/cars',
-  //   loadChildren: () =>
-  //     import("src/app/main-pages/cars/cars.module").then(
-  //       (m) => m.InventoryCarsModule
-  //     )
-  // },
+      import('src/app/auth/sign-in/sign-in.module').then((m) => m.SignInModule),
+  },
+  {
+    path: 'queue',
+    loadChildren: () =>
+      import('src/app/main-pages/queue/queue.module').then(
+        (m) => m.QueueModule
+      ),
+  },
+  {
+    path: 'inventory/cars',
+    loadChildren: () =>
+      import('src/app/main-pages/cars/cars.module').then(
+        (m) => m.InventoryCarsModule
+      ),
+  },
   // { path: 'drivers', component: MainDriversComponent },
   // { path: 'in-progress', component: MainInProgressComponent },
   // { path: 'personnel', component: MainPersonnelComponent },
@@ -30,8 +36,6 @@ const routes: Routes = [
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [
-    RouterModule
-  ]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

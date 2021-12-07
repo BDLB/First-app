@@ -9,6 +9,11 @@ import { QueueSidenavDriversResolver } from "src/app/shared/resolvers/.resolvers
 
 export const queueRoutes: Routes = [
     {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: '/queue/general/(tab:queue)'
+    },
+    {
         path: 'general',
         component: PageFrameComponent,
         children: [

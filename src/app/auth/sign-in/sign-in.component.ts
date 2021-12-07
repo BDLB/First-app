@@ -1,5 +1,11 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component,
+  OnInit, 
+  OnDestroy, 
+  ViewEncapsulation 
+} from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 import { AuthService } from '../auth.service';
 
@@ -12,15 +18,25 @@ import { AuthService } from '../auth.service';
 export class SignInComponent implements OnInit {
   authForm: FormGroup;
 
+  authentication: Subscription;
+
   constructor(
     private _formBuilder: FormBuilder,
-    private _authService: AuthService
+    private _authService: AuthService,
+    private _router: Router
   ) { }
 
   ngOnInit(): void {
+    this.authentication = this._authService.user.subscribe(
+      (validUser) => {
+        if(!!validUser) {
+          this._router.navigate(['/queue'])
+        }
+    })
+
     this.authForm = this._formBuilder.group({
       email: ["", [Validators.email, Validators.required]],
-      password: ["", [Validators.required, Validators.minLength(8)]]
+      password: ["", [Validators.required, Validators.minLength(8)]] 
     })
   }
 
@@ -30,8 +46,8 @@ export class SignInComponent implements OnInit {
     const password = this.authForm.value.password;
 
     this._authService.signIn(email, password).subscribe(
-      (response) => {
-        console.log(response)
+      () => {
+        
       },
       (error) => {
         console.log(error)

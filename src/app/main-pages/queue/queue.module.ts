@@ -32,7 +32,6 @@ import { queueRoutes } from "./queue-routing.module";
     imports:[
         RouterModule.forChild(queueRoutes),
         NgxMaterialTimepickerModule,
-        BrowserAnimationsModule,
         MatButtonToggleModule,
         ReactiveFormsModule,
         MatFormFieldModule,
