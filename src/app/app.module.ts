@@ -19,10 +19,10 @@ import { MainTrucksComponent }     from './main-pages/trucks/main-trucks.compone
 import { MainCarsComponent }       from './main-pages/cars/main-cars.component';
 import { QueueModule }             from './main-pages/queue/queue.module';
 import { AppRoutingModule }        from './app-routing.module';
-import { NgbModule }               from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent }            from './app.component';
 import { firebaseConfig }          from '../configFirebase';
 import { AngularFireModule }       from '@angular/fire/compat';
+import { RouterModule }            from '@angular/router';
 
 @NgModule( {
 	declarations: [
@@ -31,7 +31,6 @@ import { AngularFireModule }       from '@angular/fire/compat';
 		MainDriversComponent,
 		MainTrucksComponent,
 		MainCarsComponent,
-		SidenavComponent,
 		AppComponent,
 	],
 	imports: [
@@ -50,7 +49,6 @@ import { AngularFireModule }       from '@angular/fire/compat';
 		AngularFireModule.initializeApp( firebaseConfig ),
 		FormsModule,
 		QueueModule,
-		NgbModule,
 	],
 	providers: [],
 	bootstrap: [ AppComponent ],
