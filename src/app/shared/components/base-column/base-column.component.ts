@@ -9,8 +9,8 @@ import { MatColumnDef } from '@angular/material/table';
 export class BaseColumnComponent implements OnInit {
 
   /**
-   * This is the column name 
-   */ 
+   * This is the column name
+   */
   @Input() name?: any;
 
   /**
@@ -29,7 +29,7 @@ export class BaseColumnComponent implements OnInit {
   @Input() dataClass?: string;
 
   /**
-   * The reference for column definition. With that i target every column 
+   * The reference for column definition. With that i target every column
    * definition, so I can extract every column name with that line of code.
    */
   @ViewChild(MatColumnDef) columnDef: MatColumnDef;

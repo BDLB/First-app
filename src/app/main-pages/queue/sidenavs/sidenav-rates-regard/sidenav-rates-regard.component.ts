@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { PageFrameComponent } from 'src/app/shared/components/page-frame/page-frame.component';
+import { PageFrameComponent }           from '../../../../shared/components/page-frame/page-frame.component';
 
 @Component({
   selector: 'app-sidenav-rates-regard',
