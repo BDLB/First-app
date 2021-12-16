@@ -17,9 +17,8 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./sign-in.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class SignInComponent implements OnInit, AfterViewInit {
+export class SignInComponent implements OnInit {
   authForm: FormGroup;
-  @ViewChild('passwordInput') inputField: any;
 
   authentication: Subscription;
 
@@ -39,20 +38,18 @@ export class SignInComponent implements OnInit, AfterViewInit {
 
     this.authForm = this._formBuilder.group({
       email: ["", [Validators.email, Validators.required]],
-      password: ["", [Validators.required, Validators.minLength(8)]] 
+      password: ["", [Validators.required, Validators.minLength(8)]],
+      remember: []
     })
-  }
-
-  ngAfterViewInit() {
-    console.log(this.inputField)
   }
 
   onSubmit() {
     // Two types of extracting the formControls value
     const email = this.authForm.get("email").value;
     const password = this.authForm.value.password;
+    const remember = this.authForm.value.remember;
 
-    this._authService.signIn(email, password).subscribe(
+    this._authService.signIn(email, password, remember).subscribe(
       () => {
         
       },

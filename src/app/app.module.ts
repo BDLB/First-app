@@ -12,7 +12,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
-
 import { MainInProgressComponent } from './main-pages/in-progress/main-in-progress.component';
 import { MainPersonnelComponent } from './main-pages/personnel/main-personnel.component';
 import { MainDriversComponent } from './main-pages/drivers/main-drivers.component';
@@ -21,6 +20,10 @@ import { QueueModule } from './main-pages/queue/queue.module';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
+import { AngularFireModule } from '@angular/fire';
+import { environment } from 'src/environments/environment';
+import { AngularFireAuthModule } from "@angular/fire/auth";
+import 'firebase/firestore';
 
 @NgModule({
   declarations: [
@@ -45,7 +48,10 @@ import { AppComponent } from './app.component';
     BrowserModule,
     FormsModule,
     QueueModule,
-    NgbModule
+    NgbModule,
+    AngularFireModule.initializeApp(environment.firebaseconfig),
+    AngularFireAuthModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

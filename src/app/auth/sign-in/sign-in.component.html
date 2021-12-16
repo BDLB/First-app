@@ -45,6 +45,14 @@
               </mat-icon>
             </button>
           </mat-form-field>
+          <div class="sign_in-footer">
+            <mat-checkbox 
+              class="remember_user-checkbox"
+              [formControlName]="'remember'"
+            >
+              Remember
+            </mat-checkbox>
+          </div>
           <button
             type="submit"
             mat-raised-button

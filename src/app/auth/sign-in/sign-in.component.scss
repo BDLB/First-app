@@ -77,4 +77,10 @@ sign-in {
       background-color: #475569 !important;
     }
   }
+  
+  .remember_user-checkbox {
+    .mat-checkbox-inner-container {
+      border: 2px solid black;
+    }
+  }
 }

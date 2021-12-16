@@ -1,9 +1,11 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Subject } from "rxjs";
+import { from, Subject } from "rxjs";
 import { tap } from "rxjs/operators";
 import { IAuthResponseData } from "../shared/interfaces/auth-response.interface";
 import { User } from "./user";
+import firebase from "firebase";
+import { AngularFireAuth } from "@angular/fire/auth";
 
 @Injectable({
   providedIn:"root"
@@ -12,32 +14,35 @@ export class AuthService {
   user = new Subject<User>();
 
   constructor(
+    private angularAuth: AngularFireAuth,
     private _httpClient: HttpClient
-  ) {}
+  ) {
+    this.angularAuth.authState.subscribe((firebaseUser) => {
+  });
+  }
 
-  signIn(userEmail: string, userPassword: string) {
-    return this._httpClient.post<IAuthResponseData>(
-      "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyC1InwoThQf2tKbOPUYT4sW1xfORVmuezU",
-      {
-        email: userEmail,
-        password: userPassword,
-        returnSecureToken: true
-      }
-    ).pipe(
-      tap((respData) => {
-        this.handleAuthentication(respData.email, respData.localId, respData.idToken, respData.expiresIn)
-      })
+  signIn(userEmail: string, userPassword: string, rememberUser: boolean) {
+    firebase.auth().setPersistence(
+      rememberUser 
+        ? firebase.auth.Auth.Persistence.LOCAL
+        : firebase.auth.Auth.Persistence.SESSION
     )
+    return from(
+      this.angularAuth.signInWithEmailAndPassword(userEmail, userPassword)
+    ).pipe(
+        tap((loggedUserData) => {
+          console.log(loggedUserData.user['email'])
+          this.handleAuthentication(loggedUserData.user['email'], loggedUserData.user['uid'], loggedUserData.user['refreshToken'])
+        })
+      )
   }
 
   handleAuthentication(
       email: string, 
       localId: string,
-      tokenId: string,
-      expiresInDate: string
+      tokenId: string
   ) {
-    const tokenExpirationDate = new Date(new Date().getTime() + +expiresInDate);
-    const user = new User(email, localId, tokenId, tokenExpirationDate);
+    const user = new User(email, localId, tokenId);
     this.user.next(user);
   }
 }
